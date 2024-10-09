@@ -27,69 +27,33 @@ module BoutiquesScrnaboxRessourceManager
   # object method revision_info() won't work.
   Revision_info=CbrainFileRevision[__FILE__] #:nodoc:
 
-  def update_mem(step_mem, mem)
-    # Update the mem according to the step_mem
-    mem = step_mem > mem ? step_mem : mem
-  end
-
   def descriptor_for_cluster_commands
     descriptor                = super.dup
 
     suggested_resources_by_steps = descriptor.custom_module_info("BoutiquesScrnaboxRessourceManager")
 
-    # Steps is a string could be an integer "1" or a string "1-8"
-    steps = []
-    invoke_steps = invoke_params["steps"]
-    if invoke_steps.include?("-")
-        steps_range = invoke_steps.split("-")
-        steps       = (steps_range[0].to_i..steps_range[1].to_i).to_a.map(&:to_s)
-    else
-        steps = [invoke_steps]
-    end
+    invoke_steps          = invoke_params["steps"] # '1' or '2' or '1-8'
+    first_step, last_step = invoke_steps.split("-").map(&:to_i)
+    last_step           ||= first_step
+    selected_steps        = (first_step..last_step).to_a.map(&:to_s)
 
-    # Define walltime and mem according to data available in suggested_resources_by_steps
     walltime = 0
     mem      = 0
-    for step in steps
-        if suggested_resources_by_steps.has_key?(step)
-            mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-            walltime += suggested_resources_by_steps[step]["walltime"]
-        end
+
+    # Use suggested resources for each step
+    suggested_resources_by_steps.each do |step_option, resources|
+        step, option = step_option.split("_")
+
+        next unless selected_steps.include?(step)
+        next if option.present? && invoke_params[option].blank?
+
+        step_wall = resources["walltime"]
+        walltime += step_wall
+
+        step_mem  = resources["mem"]
+        mem       = step_mem if step_mem > mem
     end
 
-    # Add extra resources for optional flag
-    if invoke_params["markergsea"]          == true && steps.start_with("7")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["7_markergsea"]["walltime"]
-    end
-
-    if invoke_params["knownmarkers"]        == true && steps.start_with("7")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["7_knownmarkers"]["walltime"]
-    end
-
-    if invoke_params["referenceannotation"] == true && steps.start_with("7")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["7_referenceannotation"]["walltime"]
-    end
-
-    if invoke_params["annotate"]            == true && steps.start_with("7")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["7_annotate"]["walltime"]
-    end
-
-    if invoke_params["addmeta"]             == true && steps.start_with("8")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["8_addmeta"]["walltime"]
-    end
-
-    if invoke_params["rundge"]              == true && steps.start_with("8")
-        mem       = update_mem(suggested_resources_by_steps[step]["mem"], mem)
-        walltime += suggested_resources_by_steps["8_rundge"]["walltime"]
-    end
-
-    # In minute in descriptor, need to be converted in second
-    walltime = walltime * 60
     descriptor["suggested-resources"]["walltime-estimate"] = walltime
     descriptor["suggested-resources"]["mem"]               = mem
 
@@ -97,3 +61,4 @@ module BoutiquesScrnaboxRessourceManager
   end
 
 end
+
