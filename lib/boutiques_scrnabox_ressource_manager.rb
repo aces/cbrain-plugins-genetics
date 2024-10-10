@@ -54,7 +54,11 @@ module BoutiquesScrnaboxRessourceManager
         mem       = step_mem if step_mem > mem
     end
 
-    descriptor["suggested-resources"]["walltime-estimate"] = walltime
+
+
+    cb_error "Cannot compute time or memory limits from selected steps" if mem == 0 || waltime == 0
+
+    descriptor["suggested-resources"]["walltime-estimate"] = walltime * 60
     descriptor["suggested-resources"]["mem"]               = mem
 
     return descriptor

@@ -1527,9 +1527,6 @@
                     "mem": 16,
                     "walltime": 5
                 },
-                "7": {
-
-                },
                 "7_markergsea": {
                     "mem": 16,
                     "walltime": 5
@@ -1545,9 +1542,6 @@
                 "7_annotate": {
                     "mem": 16,
                     "walltime": 5
-                },
-                "8": {
-
                 },
                 "8_addmeta": {
                     "mem": 16,
