@@ -38,7 +38,7 @@ module BoutiquesScrnaboxRessourceManager
     selected_steps        = (first_step..last_step).to_a.map(&:to_s)
 
     walltime = 0
-    mem      = 0
+    ram      = 0
 
     # Use suggested resources for each step
     suggested_resources_by_steps.each do |step_option, resources|
@@ -50,16 +50,16 @@ module BoutiquesScrnaboxRessourceManager
         step_wall = resources["walltime"]
         walltime += step_wall
 
-        step_mem  = resources["mem"]
-        mem       = step_mem if step_mem > mem
+        step_ram  = resources["ram"]
+        ram       = step_ram if step_ram > ram
     end
 
 
 
-    cb_error "Cannot compute time or memory limits from selected steps" if mem == 0 || walltime == 0
+    cb_error "Cannot compute time or ram limits from selected steps" if ram == 0 || walltime == 0
 
     descriptor["suggested-resources"]["walltime-estimate"] = walltime * 60
-    descriptor["suggested-resources"]["mem"]               = mem
+    descriptor["suggested-resources"]["ram"]               = ram
 
     return descriptor
   end

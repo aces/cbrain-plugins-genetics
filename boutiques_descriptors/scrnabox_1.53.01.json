@@ -1504,51 +1504,51 @@
             },
             "BoutiquesScrnaboxRessourceManager": {
                 "1": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 24
                 },
                 "2": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "3": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "4": {
-                    "mem": 45,
+                    "ram": 45,
                     "walltime": 5
                 },
                 "5": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "6": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "7_markergsea": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "7_knownmarkers": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "7_referenceannotation": {
-                    "mem": 150,
+                    "ram": 150,
                     "walltime": 12
                 },
                 "7_annotate": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 5
                 },
                 "8_addmeta": {
-                    "mem": 16,
+                    "ram": 16,
                     "walltime": 12
                 },
                 "8_rundge": {
-                    "mem": 40,
+                    "ram": 40,
                     "walltime": 12
                 }
             }
