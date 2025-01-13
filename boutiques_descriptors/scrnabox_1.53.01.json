@@ -1498,7 +1498,7 @@
         "cbrain:author": "Natacha Beck <nbeck@mcin.ca>",
         "cbrain:integrator_modules": {
             "BoutiquesInputCopier": {
-                "working_dir":         { "select_box_selected": true, "select_box_hidden": true }
+                "working_dir":         { "checkbox_selected": true, "checkbox_hidden": true }
             },
             "BoutiquesOutputFileTypeSetter": {
                 "output_dir": "ScrnaboxOutput"
