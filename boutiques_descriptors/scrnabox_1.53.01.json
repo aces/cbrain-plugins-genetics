@@ -18,7 +18,7 @@
             "type": "File",
             "id": "working_dir",
             "default-value": "scRNAbox_workdir",
-            "description": "The working directory where the output files will be saved.",
+            "description": "Provide nothing to run scRNAbox from step 1. Provide the output of a previous run to continue processing further",
             "optional": true
         },
         {   "name": "Steps",
@@ -1279,7 +1279,7 @@
     "output-files": [
         {
             "id": "output_dir",
-            "description": "Output of scRNAbox",
+            "description": "Final output of the pipeline",
             "name": "The output directory",
             "path-template": "[WORKING_DIR]",
             "optional": true
@@ -1499,6 +1499,9 @@
         "cbrain:integrator_modules": {
             "BoutiquesInputCopier": {
                 "working_dir":         { "checkbox_hidden": true }
+            },
+            "BoutiquesFileTypeVerifier": {
+                "working_dir":         ["ScrnaboxOutput"]
             },
             "BoutiquesOutputFileTypeSetter": {
                 "output_dir": "ScrnaboxOutput"
