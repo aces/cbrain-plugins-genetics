@@ -1506,10 +1506,10 @@
             "BoutiquesOutputFileTypeSetter": {
                 "output_dir": "ScrnaboxOutput"
             },
-            "BoutiquesScrnaboxRessourceManager": {
+            "BoutiquesScrnaboxResourceManager": {
                 "1": {
-                    "ram": 30,
-                    "walltime": 180
+                    "ram": 150,
+                    "walltime": 240
                 },
                 "2": {
                     "ram": 16,
