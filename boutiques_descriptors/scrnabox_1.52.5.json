@@ -1504,56 +1504,57 @@
                 "working_dir":         ["ScrnaboxOutput"]
             },
             "BoutiquesOutputFileTypeSetter": {
-                "output_dir": "ScrnaboxOutput"
+                "outdir": "ScrnaboxOutput"
             },
-            "BoutiquesScrnaboxRessourceManager": {
+            "BoutiquesPostProcessingCleaner": ["[WORKING_DIR]"],
+            "BoutiquesScrnaboxResourceManager": {
                 "1": {
                     "ram": 150,
                     "walltime": 240
                 },
                 "2": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 40
                 },
                 "3": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 60
                 },
                 "4": {
                     "ram": 45,
-                    "walltime": 20
+                    "walltime": 40
                 },
                 "5": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 40
                 },
                 "6": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 50
                 },
                 "7_markergsea": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 50
                 },
                 "7_knownmarkers": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 50
                 },
                 "7_referenceannotation": {
                     "ram": 150,
-                    "walltime": 48
+                    "walltime": 90
                 },
                 "7_annotate": {
                     "ram": 16,
-                    "walltime": 20
+                    "walltime": 50
                 },
                 "8_addmeta": {
                     "ram": 16,
-                    "walltime": 48
+                    "walltime": 90
                 },
                 "8_rundge": {
                     "ram": 40,
-                    "walltime": 48
+                    "walltime": 90
                 }
             }
         }
