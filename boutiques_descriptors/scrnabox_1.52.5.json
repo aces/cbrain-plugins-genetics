@@ -4,38 +4,32 @@
     "tool-version": "v1.52.50",
     "author": "MNI BIOINFO CORE",
     "url": "https://neurobioinfo.github.io/scrnabox/site/",
-    "command-line": "scRNAbox_cmd_wrapper.py --R_path $R_PATH --job_mode local [WORKING_DIR] [STEPS] [OUTPUT_DIR] [METHOD] [MSD] [MARKERGSEA] [KNOWNMARKERS] [REFERENCEANNOTATION] [ANNOTATE] [ADDMETA] [RUNDGE] [PAR_AUTOMATED_LIBRARY_PREP] [PAR_FASTQ_DIRECTORY] [PAR_SAMPLE_NAMES_STEP1] [PAR_RENAME_SAMPLES] [PAR_NEW_SAMPLE_NAMES] [PAR_PAIRED_END_SEQ] --ref_data_dir \"$REF_DATA_DIR\"/ [PAR_REF_DIR_GRCH] [PAR_R1_LENGTH] [PAR_R2_LENGTH] [PAR_INCLUDE_INTRONS] [PAR_NO_TARGET_UMI_FILTER] [PAR_EXPECT_CELLS] [PAR_FORCE_CELLS] [PAR_NO_BAM] [PAR_RNA_RUN_NAMES] [PAR_HTO_RUN_NAMES] [PAR_SEQ_RUN_NAMES] [ID] [NAME] [READ] [PATTERN] [SEQUENCE] [PAR_SAVE_RNA_STEP2] [PAR_SAVE_METADATA_STEP2] [PAR_AMBIENT_RNA] [PAR_MIN_CELLS_L] [PAR_NORMALIZATION_METHOD_STEP2] [PAR_SCALE_FACTOR_STEP2] [PAR_SELECTION_METHOD_STEP2] [PAR_NFEATURES_STEP2] [PAR_SAVE_RNA_STEP3] [PAR_SAVE_METADATA_STEP3] [PAR_SEURAT_OBJECT_STEP3] [PAR_NFEATURE_RNA_L] [PAR_NFEATURE_RNA_U] [PAR_NCOUNT_RNA_L] [PAR_NCOUNT_RNA_U] [PAR_MITOCHONDRIA_PERCENT_L] [PAR_MITOCHONDRIA_PERCENT_U] [PAR_RIBOSOMAL_PERCENT_L] [PAR_RIBOSOMAL_PERCENT_U] [PAR_REMOVE_MITOCHONDRIAL_GENES] [PAR_REMOVE_RIBOSOMAL_GENES] [PAR_REMOVE_GENES] [PAR_REGRESS_CELL_CYCLE_GENES] [PAR_REGRESS_CUSTOM_GENES] [PAR_REGRESS_GENES] [PAR_NORMALIZATION_METHOD_STEP3] [PAR_SCALE_FACTOR_STEP3] [PAR_SELECTION_METHOD_STEP3] [PAR_NFEATURES_STEP3] [PAR_TOP] [PAR_NPCS_PCA] [PAR_SAVE_RNA_STEP4] [PAR_SAVE_METADATA_STEP4] [PAR_SEURAT_OBJECT_STEP4] [PAR_RUNUMAP_DIMS_STEP4] [PAR_RUNUMAP_N_NEIGHBORS_STEP4] [PAR_DROPDN] [PAR_PCS] [PAR_PN] [PAR_SCT] [PAR_RATE_NEXP] [PAR_SAMPLE_NAMES_STEP4] [PAR_EXPECTED_DOUBLET_RATE] [PAR_SAVE_RNA_STEP5] [PAR_SAVE_METADATA_STEP5] [PAR_SEURAT_OBJECT_STEP5] [PAR_ONE_SEURAT] [PAR_INTEGRATE_SEURAT] [PAR_MERGE_SEURAT] [PAR_DEFAULTASSAY] [PAR_NORMALIZATION_METHOD_STEP5] [PAR_SCALE_FACTOR_STEP5] [PAR_SELECTION_METHOD_STEP5] [PAR_NFEATURES_STEP5] [PAR_FINDINTEGRATIONANCHORS_DIM] [PAR_RUNPCA_NPCS] [PAR_RUNUMAP_DIMS_STEP5] [PAR_RUNUMAP_N_NEIGHBORS_STEP5] [PAR_COMPUTE_JACKSTRAW] [PAR_SAVE_RNA_STEP6] [PAR_SAVE_METADATA_STEP6] [PAR_SEURAT_OBJECT_STEP6] [PAR_SKIP_INTEGRATION] [PAR_FINDNEIGHBORS_DIMS] [PAR_RUNUMAP_DIMS_STEP6] [PAR_FINDNEIGHBORS_K_PARAM] [PAR_FINDNEIGHBORS_PRUNE_SNN] [PAR_FINDCLUSTERS_RESOLUTION] [PAR_COMPUTE_ARI] [PAR_RI_REPS] [PAR_SAVE_RNA_STEP7] [PAR_SAVE_METADATA_STEP7] [PAR_SEURAT_OBJECT_STEP7] [PAR_LEVEL_CLUSTER] [PAR_RUN_FIND_MARKER] [PAR_RUN_ENRICHR] [PAR_TOP_SEL] [PAR_DB] [PAR_RUN_MODULE_SCORE] [PAR_RUN_VISUALIZE_MARKERS] [PAR_MODULE_SCORE] [PAR_SELECT_FEATURES_LIST] [PAR_SELECT_FEATURES_CSV] [PAR_REFERENCE] [PAR_REFERENCE_NAME] [PAR_LEVEL_CELLTYPE] [PAR_FINDTRANSFERANCHORS_DIM] [PAR_FUTUREGLOBALSMAXSIZE] [PAR_ANNOTATE_RESOLUTION] [PAR_NAME_METADATA] [PAR_ANNOTATE_LABELS] [PAR_SAVE_RNA_STEP8] [PAR_SAVE_METADATA_STEP8] [PAR_SEURAT_OBJECT_STEP8] [PAR_MERGE_META] [PAR_METADATA] [PAR_RUN_CELL_BASED_ALL_CELLS] [PAR_RUN_CELL_BASED_CELLTYPE_GROUPS] [PAR_RUN_SAMPLE_BASED_ALL_CELLS] [PAR_RUN_SAMPLE_BASED_CELLTYPE_GROUPS] [PAR_STATISTICAL_METHOD] [CONTRAST_CELL_BASED_ALL_CELLS] [CONTRAST_CELL_BASED_CELLTYPE_GROUPS] [CONTRAST_SAMPLE_BASED_ALL_CELLS] [CONTRAST_SAMPLE_BASED_CELLTYPE_GROUPS]",
+    "command-line": "scRNAbox_cmd_wrapper.py --R_path $R_PATH --job_mode local <--output_dir DIR> --ref_data_dir \"$REF_DATA_DIR\"/ <-d DIR> <--method METHOD> <--steps STEPS> <--par_automated_library_prep_scrna> <--par_fastq_directory_scrna DIR> <--par_sample_names_step1 SAMPLE_NAMES> <--par_rename_samples_scrna> <--par_new_sample_names NEW_SAMPLE_NAMES> <--par_paired_end_seq_scrna> <--par_ref_dir_grch_scrna PAR_REF_DIR_GRCH_SCRNA> <--par_r1_length_scrna PAR_R1_LENGTH_SCRNA> <--par_r2_length_scrna PAR_R2_LENGTH_SCRNA>  <--par_include_introns_scrna> <--par_no_target_umi_filter_scrna> <--par_expect_cells_scrna PAR_EXPECT_CELLS_SCRNA> <--par_force_cells_scrna PAR_FORCE_CELLS_SCRNA> <--par_no_bam_scrna> <--par_automated_library_prep_hto> <--par_fastq_directory_hto DIR> <--par_RNA_run_names RNA_RUN_NAMES> <--par_HTO_run_names HTO_RUN_NAMES> <--par_seq_run_names SEQ_RUN_NAMES> <--id ID> <--name NAME> <--read READ> <--pattern PATTERN> <--sequence SEQUENCE> <--par_ref_dir_grch_hto PAR_REF_DIR_GRCH_HTO> <--par_paired_end_seq_hto> <--par_r1_length_hto PAR_R1_LENGTH_HTO> <--par_r2_length_hto PAR_R2_LENGTH_HTO> <--par_include_introns_hto> <--par_no_target_umi_filter_hto> <--par_expect_cells_hto PAR_EXPECT_CELLS_HTO> <--par_force_cells_hto PAR_FORCE_CELLS_HTO> <--par_no_bam_hto>  <--par_save_RNA_step2> <--par_save_metadata_step2> <--par_ambient_RNA> <--par_min_cells_L PAR_MIN_CELLS_L> <--par_normalization_method_step2 PAR_NORMALIZATION_METHOD_STEP2> <--par_scale_factor_step2 PAR_SCALE_FACTOR_STEP2> <--par_selection_method_step2 PAR_SELECTION_METHOD_STEP2> <--par_nfeatures_step2 PAR_NFEATURES_STEP2> <--par_save_RNA_step3> <--par_save_metadata_step3> <--par_seurat_object_step3 DIR> <--par_nFeature_RNA_L PAR_NFEATURE_RNA_L> <--par_nFeature_RNA_U PAR_NFEATURE_RNA_U> <--par_nCount_RNA_L PAR_NCOUNT_RNA_L> <--par_nCount_RNA_U PAR_NCOUNT_RNA_U> <--par_mitochondria_percent_L PAR_MITOCHONDRIA_PERCENT_L> <--par_mitochondria_percent_U PAR_MITOCHONDIA_PERCENT_U> <--par_ribosomal_percent_L PAR_RIBOSOMAL_PERCENT_L> <--par_ribosomal_percent_U PAR_RIBOSOMAL_PERCENT_U> <--par_remove_mitochondrial_genes> <--par_remove_ribosomal_genes> <--par_remove_genes PAR_REMOVE_GENES> <--par_regress_cell_cycle_genes> <--par_regress_custom_genes> <--par_regress_genes PAR_REGRESS_GENES> <--par_normalization_method_step3 PAR_NORMALIZATION_METHOD_STEP3> <--par_scale_factor_step3 PAR_SCALE_FACTOR_STEP3> <--par_selection_method_step3 PAR_SELECTION_METHOD_STEP3> <--par_nfeatures_step3 PAR_NFEATURES_STEP3> <--par_top PAR_TOP> <--par_npcs_pca_step3 PAR_NPCS_PCA_STEP3> <--par_save_RNA_step4_scrna> <--par_save_metadata_step4_scrna> <--par_seurat_object_step4_scrna DIR> <--par_RunUMAP_dims_step4_scrna PAR_RUNUMAP_DIMS_STEP4_SCRNA> <--par_RunUMAP_n_neighbors_step4 PAR_RUNUMAP_N_NEIGHBORS_STEP4> <--par_dropDN_scrna> <--par_PCs PAR_PCS> <--par_pN PAR_PN> <--par_sct> <--par_rate_nExp PAR_RATE_NEXP> <--par_sample_names_step4 PAR_SAMPLE_NAMES_STEP4> <--par_expected_doublet_rate PAR_EXPECTED_DOUBLET_RATE> <--msd> <--par_save_RNA_step4_hto> <--par_save_metadata_step4_hto> <--par_seurat_object_step4_hto DIR> <--par_normalization_method_step4 PAR_NORMALIZATION_METHOD_STEP4> <--par_scale_factor_step4 PAR_SCALE_FACTOR_STEP4> <--par_selection_method_step4 PAR_SELECTION_METHOD_STEP4> <--par_nfeatures_step4 PAR_NFEATURES_STEP4> <--par_dims_umap PAR_DIMS_UMAP> <--par_n_neighbor PAR_N_NEIGHBOR> <--par_dimensionality_reduction> <--par_npcs_pca_step4 PAR_NPCS_PCA_STEP4> <--par_dropDN_hto> <--par_label_dropDN PAR_LABEL_DROPDN> <--par_quantile PAR_QUANTILE> <--par_autoThresh> <--par_maxiter PAR_MAXITER> <--par_RidgePlot_ncol PAR_RIDGEPLOT_NCOL> <--par_old_antibody_label PAR_OLD_ANTIBODY_LABEL> <--par_new_antibody_label PAR_NEW_ANTIBODY_LABEL> <--par_save_RNA_step5> <--par_save_metadata_step5> <--par_seurat_object_step5 DIR> <--par_one_seurat> <--par_integrate_seurat> <--par_merge_seurat> <--par_DefaultAssay PAR_DEFAULTASSAY> <--par_normalization_method_step5 PAR_NORMALIZATION_METHOD_STEP5> <--par_scale_factor_step5 PAR_SCALE_FACTOR_STEP5> <--par_selection_method_step5 PAR_SELECTION_METHOD_STEP5> <--par_nfeatures_step5 PAR_NFEATURES_STEP5> <--par_FindIntegrationAnchors_dim PAR_FINDINTEGRATIONANCHORS_DIM> <--par_RunPCA_npcs PAR_RUNPCA_NPCS> <--par_RunUMAP_dims_step5 PAR_RUNUMAP_DIMS_STEP5> <--par_RunUMAP_n_neighbors_step5 PAR_RUNUMAP_N_NEIGHBORS_STEP5> <--par_compute_jackstraw>  <--par_save_RNA_step6> <--par_save_metadata_step6> <--par_seurat_object_step6 DIR> <--par_skip_integration> <--par_FindNeighbors_dims PAR_FINDNEIGHBORS_DIMS> <--par_RunUMAP_dims_step6 PAR_RUNUMAP_DIMS_STEP6> <--par_FindNeighbors_k_param PAR_FINDNEIGHBORS_K_PARAM> <--par_FindNeighbors_prune_SNN PAR_FINDNEIGHBORS_PRUNE_SNN> <--par_FindClusters_resolution PAR_FINDCLUSTERS_RESOLUTION> <--par_compute_ARI> <--par_RI_reps PAR_RI_REPS> <--markergsea> <--knownmarkers> <--referenceannotation> <--annotate> <--par_save_RNA_step7> <--par_save_metadata_step7> <--par_seurat_object_step7 DIR> <--par_level_cluster PAR_LEVEL_CLUSTER> <--par_run_find_marker> <--par_top_sel PAR_TOP_SEL> <--par_run_enrichR> <--par_db PAR_DB> <--par_run_module_score> <--par_module_score FILE> <--par_run_visualize_markers> <--par_select_features_list PAR_SELECT_FEATURES_LIST> <--par_select_features_csv FILE> <--par_reference FILE> <--par_reference_name PAR_REFERENCE_NAME> <--par_level_celltype PAR_LEVEL_CELLTYPE> <--par_FindTransferAnchors_dim PAR_FINDTRANSFERANCHORS_DIM> <--par_futureglobalsmaxSize PAR_FUTUREGLOBALSMAXSIZE> <--par_annotate_resolution PAR_ANNOTATE_RESOLUTION> <--par_name_metadata PAR_NAME_METADATA> <--par_annotate_labels PAR_ANNOTATE_LABELS> <--addmeta> <--rundge> <--par_save_RNA_step8> <--par_save_metadata_step8> <--par_seurat_object_step8 DIR> <--par_metadata FILE> <--par_merge_meta PAR_MERGE_META> <--par_run_cell_based_all_cells> <--contrast_cell_based_all_cells FILE> <--par_run_cell_based_celltype_groups> <--contrast_cell_based_celltype_groups FILE> <--par_statistical_method PAR_STATISTICAL_METHOD> <--par_run_sample_based_all_cells> <--contrast_sample_based_all_cells FILE> <--par_run_sample_based_celltype_groups> <--contrast_sample_based_celltype_groups FILE>",
     "description": "scRNAbox is a collection of tools for single-cell RNA-seq data analysis.",
     "suggested-resources": {
         "walltime-estimate": 700,
         "ram": 5
     },
     "inputs": [
+
         {
             "name": "Working directory",
             "command-line-flag": "-d",
-            "value-key": "[WORKING_DIR]",
+            "value-key": "<-d DIR>",
             "type": "File",
-            "id": "working_dir",
+            "id": "working_directory",
             "default-value": "scRNAbox_workdir",
             "description": "Provide nothing to run scRNAbox from step 1. Provide the output of a previous run to continue processing further",
             "optional": true
         },
-        {   "name": "Steps",
-            "command-line-flag": "--steps",
-            "value-key": "[STEPS]",
-            "type": "String",
-            "id": "steps",
-            "description": "Specify what steps, e.g., 2 to run step 2. 2-6, run steps 2 through 6",
-            "optional": false
-        },
+
         {
             "name": "Method",
             "command-line-flag": "--method",
-            "value-key": "[METHOD]",
+            "value-key": "<--method METHOD>",
             "type": "String",
             "id": "method",
-            "description": "Select your preferred method: HTO and SCRNA for hashtag, and Standard scRNA, respectively.",
+            "description": "Select the appropriate analysis track. For the Standard Track, select (SCRNA). For the HTO Track, select (HTO). The Standard Track is designed for experiments where each sample is captured and sequenced separately, while the HTO Track is designed for multiplexed experiments where samples are tagged with sample-specific oligonucleotide tagged Hashtag antibodies (HTO), pooled, and sequenced together.",
             "value-choices":
                 [
                     "HTO",
@@ -43,134 +37,81 @@
                 ],
             "optional": false
         },
-        {
-            "name": "MSD",
-            "command-line-flag": "--msd",
-            "value-key": "[MSD]",
-            "type": "Flag",
-            "id": "msd",
-            "description": "You can get the hashtag labels by running the following code (HTO Step 4).",
-            "optional": true
+        {   "name": "Steps",
+            "command-line-flag": "--steps",
+            "value-key": "<--steps STEPS>",
+            "type": "String",
+            "id": "steps",
+            "description": "Specify which steps to execute in this run. E.g., 2 will execute Step 2; 2-6 will execute Steps 2 through 6.",
+            "optional": false
         },
-        {
-            "name": "Marker GSEA",
-            "command-line-flag": "--markergsea",
-            "value-key": "[MARKERGSEA]",
-            "type": "Flag",
-            "id": "markergsea",
-            "description": "Identify marker genes for each cluster and run marker gene set enrichment analysis (GSEA) using EnrichR libraries (Step 7).",
-            "optional": true
-        },
-        {
-            "name": "Known markers",
-            "command-line-flag": "--knownmarkers",
-            "value-key": "[KNOWNMARKERS]",
-            "type": "Flag",
-            "id": "knownmarkers",
-            "description": "Profile the individual or aggregated expression of known marker genes.",
-            "optional": true
-        },
-        {
-            "name": "Reference annotation",
-            "command-line-flag": "--referenceannotation",
-            "value-key": "[REFERENCEANNOTATION]",
-            "type": "Flag",
-            "id": "referenceannotation",
-            "description": "Generate annotation predictions based on the annotations of a reference Seurat object (Step 7).",
-            "optional": true
-        },
-        {
-            "name": "Clustering annotatations",
-            "command-line-flag": "--annotate",
-            "value-key": "[ANNOTATE]",
-            "type": "Flag",
-            "id": "annotate",
-            "description": "Add clustering annotations to Seurat object metadata (Step 7).",
-            "optional": true
-        },
-        {
-            "name": "Add metadata",
-            "command-line-flag": "--addmeta",
-            "value-key": "[ADDMETA]",
-            "type": "Flag",
-            "id": "addmeta",
-            "description": "Add metadata columns to the Seurat object (Step 8).",
-            "optional": true
-        },
-        {
-            "name": "Run DGE",
-            "command-line-flag": "--rundge",
-            "value-key": "[RUNDGE]",
-            "type": "Flag",
-            "id": "rundge",
-            "description": "Perform differential gene expression contrasts (Step 8).",
-            "optional": true
-        },
+
+
         {
             "name": "Automated library prep",
-            "command-line-flag": "--par_automated_library_prep",
-            "value-key": "[PAR_AUTOMATED_LIBRARY_PREP]",
+            "command-line-flag": "--par_automated_library_prep_scrna",
+            "value-key": "<--par_automated_library_prep_scrna>",
             "type": "Flag",
-            "id": "par_automated_library_prep",
-            "description": "Whether or not to perform automated library prep.",
+            "id": "par_automated_library_prep_scrna",
+            "description": "Whether or not to perform automated library prep. Alternatively, you may set this parameter to 'no' and manually prepare the libraries. For most use cases, it is recommended to perform automated library prep.",
             "optional": true
         },
         {
             "name": "FASTQ directory",
-            "command-line-flag": "--par_fastq_directory",
-            "value-key": "[PAR_FASTQ_DIRECTORY]",
+            "command-line-flag": "--par_fastq_directory_scrna",
+            "value-key": "<--par_fastq_directory_scrna DIR>",
             "type": "File",
-            "id": "par_fastq_directory",
-            "description": "Directory containing the FASTQ files. This directory should only contain FASTQ files for the experiment.",
+            "id": "par_fastq_directory_scrna",
+            "description": "Path to directory containing the FASTQ files for the scRNA-seq experiment. This directory should only contain FASTQ files for the experiment.",
             "optional": true
         },
         {
             "name": "Sample names",
             "command-line-flag": "--par_sample_names_step1",
-            "value-key": "[PAR_SAMPLE_NAMES_STEP1]",
+            "value-key": "<--par_sample_names_step1 SAMPLE_NAMES>",
             "type": "String",
             "id": "par_sample_names_step1",
-            "description": "The sample names used to name the FASTQ files according to CellRanger nomeclature",
+            "description": "The sample names used to name the FASTQ files according to CellRanger nomenclature. E.g., if the FASTQ file is named 'PD1_S1_L001_R1_001.fastq', the sample name would be ‘PD1’.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
             "name": "Rename samples",
-            "command-line-flag": "--par_rename_samples",
-            "value-key": "[PAR_RENAME_SAMPLES]",
+            "command-line-flag": "--par_rename_samples_scrna",
+            "value-key": "<--par_rename_samples_scrna>",
             "type": "Flag",
-            "id": "par_rename_samples",
-            "description": "Whether or not you want to rename your samples. These names will be used to identify cells in the Seurat objects",
+            "id": "par_rename_samples_scrna",
+            "description": "Whether or not you want to rename your samples. These names will be used to identify cells in the Seurat objects.",
             "optional": true
         },
-        {
+                {
             "name": "New sample names",
             "command-line-flag": "--par_new_sample_names",
-            "value-key": "[PAR_NEW_SAMPLE_NAMES]",
+            "value-key": "<--par_new_sample_names NEW_SAMPLE_NAMES>",
             "type": "String",
             "id": "par_new_sample_names",
-            "description": "New sample names. Make sure they are defined in the same order as the old labels are listed in par_sample_names",
+            "description": "New sample names. Make sure they are defined in the same order as 'par_sample_names'. E.g., you may wish to rename sample 'PD1' to 'Parkinson1'.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
             "name": "Paired-end sequencing",
-            "command-line-flag": "--par_paired_end_seq",
-            "value-key": "[PAR_PAIRED_END_SEQ]",
+            "command-line-flag": "--par_paired_end_seq_scrna",
+            "value-key": "<--par_paired_end_seq_scrna>",
             "type": "Flag",
-            "id": "par_paired_end_seq",
-            "description": "Whether or not paired-end sequencing was performed",
+            "id": "par_paired_end_seq_scrna",
+            "description": "Whether or not paired-end sequencing was performed.",
             "optional": true
         },
         {
             "name": "Reference genome",
-            "command-line-flag": "--par_ref_dir_grch",
-            "value-key": "[PAR_REF_DIR_GRCH]",
+            "command-line-flag": "--par_ref_dir_grch_scrna",
+            "value-key": "<--par_ref_dir_grch_scrna PAR_REF_DIR_GRCH_SCRNA>",
             "type": "String",
-            "id": "par_ref_dir_grch",
-            "description": "Reference genome for FASTQ alignment. 10X Genomics reference genomes are available for download. For more information see the 10X Genomics documentation.",
+            "id": "par_ref_dir_grch_scrna",
+            "description": "Path to reference genome for FASTQ alignment.",
             "value-choices": [
                 "refdata-cellranger-GRCh38-3.0.0",
                 "refdata-gex-GRCh38-2020-A",
@@ -181,71 +122,91 @@
         },
         {
             "name": "R1 length",
-            "command-line-flag": "--par_r1_length",
-            "value-key": "[PAR_R1_LENGTH]",
+            "command-line-flag": "--par_r1_length_scrna",
+            "value-key": "<--par_r1_length_scrna PAR_R1_LENGTH_SCRNA>",
             "type": "Number",
-            "id": "par_r1_length",
-            "description": "Minimum number of bases to retain for R1 sequence of gene expression",
+            "id": "par_r1_length_scrna",
+            "description": "Minimum number of bases to retain for R1 sequence of gene expression. For most use-cases, this can be kept at 0 (default).",
             "optional": true
         },
         {
             "name": "R2 length",
-            "command-line-flag": "--par_r2_length",
-            "value-key": "[PAR_R2_LENGTH]",
+            "command-line-flag": "--par_r2_length_scrna",
+            "value-key": "<--par_r2_length_scrna PAR_R2_LENGTH_SCRNA>",
             "type": "Number",
-            "id": "par_r2_length",
-            "description": "Minimum number of bases to retain for R2 sequence of gene expression",
+            "id": "par_r2_length_scrna",
+            "description": "Minimum number of bases to retain for R2 sequence of gene expression. For most use-cases, this can be kept at 0 (default).",
             "optional": true
         },
         {
             "name": "Include introns",
-            "command-line-flag": "--par_include_introns",
-            "value-key": "[PAR_INCLUDE_INTRONS]",
+            "command-line-flag": "--par_include_introns_scrna",
+            "value-key": "<--par_include_introns_scrna>",
             "type": "Flag",
-            "id": "par_include_introns",
-            "description": "Whether or not to include intronic reads in the gene expression matrix",
+            "id": "par_include_introns_scrna",
+            "description": "Whether or not to include intronic reads in the gene expression matrix.",
             "optional": true
         },
         {
             "name": "No target UMI filter",
-            "command-line-flag": "--par_no_target_umi_filter",
-            "value-key": "[PAR_NO_TARGET_UMI_FILTER]",
+            "command-line-flag": "--par_no_target_umi_filter_scrna",
+            "value-key": "<--par_no_target_umi_filter_scrna>",
             "type": "Flag",
-            "id": "par_no_target_umi_filter",
-            "description": "Whether or not to turn off CellRanger",
+            "id": "par_no_target_umi_filter_scrna",
+            "description": "Whether or not to turn off CellRanger's target UMI filtering sub-pipeline. For most use-cases, this can remain disabled (default).",
             "optional": true
         },
         {
             "name": "Expected cells",
-            "command-line-flag": "--par_expect_cells",
-            "value-key": "[PAR_EXPECT_CELLS]",
+            "command-line-flag": "--par_expect_cells_scrna",
+            "value-key": "<--par_expect_cells_scrna PAR_EXPECT_CELLS_SCRNA>",
             "type": "Number",
-            "id": "par_expect_cells",
-            "description": "Expected number of cells. By default, CellRanger",
+            "id": "par_expect_cells_scrna",
+            "description": "Expected number of cells. By default, CellRanger's auto-estimate algorithm will be used. For most use-cases, this can be kept at 0 (default).",
             "optional": true
         },
         {
             "name": "Force cells",
-            "command-line-flag": "--par_force_cells",
-            "value-key": "[PAR_FORCE_CELLS]",
+            "command-line-flag": "--par_force_cells_scrna",
+            "value-key": "<--par_force_cells_scrna PAR_FORCE_CELLS_SCRNA>",
             "type": "Number",
-            "id": "par_force_cells",
-            "description": "Force the CellRanger count pipeline to use N cells.",
+            "id": "par_force_cells_scrna",
+            "description": "Force the CellRanger count pipeline to use N cells. For most use-cases, this can be kept at 0 (default).",
             "optional": true
         },
         {
             "name": "No bam",
-            "command-line-flag": "--par_no_bam",
-            "value-key": "[PAR_NO_BAM]",
+            "command-line-flag": "--par_no_bam_scrna",
+            "value-key": "<--par_no_bam_scrna>",
             "type": "Flag",
-            "id": "par_no_bam",
-            "description": "Whether or not to skip the bam file generation in the CellRanger pipeline.",
+            "id": "par_no_bam_scrna",
+            "description": "Whether or not to skip the bam file generation in the CellRanger pipeline. For most use-cases, this can remain disabled (default).",
+            "optional": true
+        },
+
+
+        {
+            "name": "Automated library prep",
+            "command-line-flag": "--par_automated_library_prep_hto",
+            "value-key": "<--par_automated_library_prep_hto>",
+            "type": "Flag",
+            "id": "par_automated_library_prep_hto",
+            "description": "Whether or not to perform automated library prep. Alternatively, you may set this parameter to 'no' and manually prepare the libraries. For most use cases, it is recommended to perform automated library prep.",
+            "optional": true
+        },
+        {
+            "name":"FASTQ directory",
+            "command-line-flag": "--par_fastq_directory_hto",
+            "value-key": "<--par_fastq_directory_hto DIR>",
+            "type": "File",
+            "id": "par_fastq_directory_hto",
+            "description": "Path to directory containing the FASTQ files. This directory should only contain FASTQ files for the experiment.",
             "optional": true
         },
         {
             "name": "RNA run names",
             "command-line-flag": "--par_RNA_run_names",
-            "value-key": "[PAR_RNA_RUN_NAMES]",
+            "value-key": "<--par_RNA_run_names RNA_RUN_NAMES>",
             "type": "String",
             "id": "par_RNA_run_names",
             "description": "The names of the sequencing runs for the RNA assay",
@@ -254,25 +215,25 @@
         {
             "name": "HTO run names",
             "command-line-flag": "--par_HTO_run_names",
-            "value-key": "[PAR_HTO_RUN_NAMES]",
+            "value-key": "<--par_HTO_run_names HTO_RUN_NAMES>",
             "type": "String",
             "id": "par_HTO_run_names",
             "description": "The names of the sequencing runs for the HTO assay",
             "optional": true
         },
         {
-            "name": "Seq run names",
+            "name": "Sequencing run names",
             "command-line-flag": "--par_seq_run_names",
-            "value-key": "[PAR_SEQ_RUN_NAMES]",
+            "value-key": "<--par_seq_run_names SEQ_RUN_NAMES>",
             "type": "String",
             "id": "par_seq_run_names",
-            "description": "The user-selected name for the sequencing run. These names will be used to identify cells in the Seurat objects",
+            "description": "The user-defined name for the sequencing run. These names will be used to identify cells in the Seurat objects.",
             "optional": true
         },
         {
             "name": "ID",
             "command-line-flag": "--id",
-            "value-key": "[ID]",
+            "value-key": "<--id ID>",
             "type": "String",
             "id": "id",
             "description": "Barcode ID which will be used to track the feature counts",
@@ -281,19 +242,19 @@
         {
             "name": "Name",
             "command-line-flag": "--name",
-            "value-key": "[NAME]",
+            "value-key": "<--name NAME>",
             "type": "String",
             "id": "name",
-            "description": "The user-selected name for the barcode identifier",
+            "description": "The user-defined name for the barcode identifier.",
             "optional": true
         },
         {
             "name": "Read",
             "command-line-flag": "--read",
-            "value-key": "[READ]",
+            "value-key": "<--read READ>",
             "type": "String",
             "id": "read",
-            "description": "Which RNA sequencing read contains the barcode sequence. This value Will be either R1 or R2.",
+            "description": "Which RNA sequencing read contains the barcode sequence. This value will be either R1 or R2.",
             "value-choices": [
                 "R1",
                 "R2"
@@ -303,7 +264,7 @@
         {
             "name": "Pattern",
             "command-line-flag": "--pattern",
-            "value-key": "[PATTERN]",
+            "value-key": "<--pattern PATTERN>",
             "type": "String",
             "id": "pattern",
             "description": "The pattern of the barcode identifiers",
@@ -312,966 +273,1312 @@
         {
             "name": "Sequence",
             "command-line-flag": "--sequence",
-            "value-key": "[SEQUENCE]",
+            "value-key": "<--sequence SEQUENCE>",
             "type": "String",
             "id": "sequence",
-            "description": "The nucleotide sequence associated with the barcode identifier",
+            "description": "The nucleotide sequence for the barcode identifiers.",
             "optional": true
         },
         {
+            "name": "Reference genome",
+            "command-line-flag": "--par_ref_dir_grch_hto",
+            "value-key": "<--par_ref_dir_grch_hto PAR_REF_DIR_GRCH_HTO>",
+            "type": "String",
+            "id": "par_ref_dir_grch_hto",
+            "description": "Path to reference genome for FASTQ alignment.",
+            "value-choices": [
+                "refdata-cellranger-GRCh38-3.0.0",
+                "refdata-gex-GRCh38-2020-A",
+                "refdata-gex-mm10-2020-A",
+                "tdTomato_genome"
+            ],
+            "optional": true
+        },
+        {
+            "name": "Paired-end sequencing",
+            "command-line-flag": "--par_paired_end_seq_hto",
+            "value-key": "<--par_paired_end_seq_hto>",
+            "type": "Flag",
+            "id": "par_paired_end_seq_hto",
+            "description": "Whether or not paired-end sequencing was performed.",
+            "optional": true
+        },
+        {
+            "name": "R1 length",
+            "command-line-flag": "--par_r1_length_hto",
+            "value-key": "<--par_r1_length_hto PAR_R1_LENGTH_HTO>",
+            "type": "Number",
+            "id": "par_r1_length_hto",
+            "description": "Minimum number of bases to retain for R1 sequence of gene expression. For most use-cases, this can be kept at 0 (default).",
+            "optional": true
+        },
+        {
+            "name": "R2 length",
+            "command-line-flag": "--par_r2_length_hto",
+            "value-key": "<--par_r2_length_hto PAR_R2_LENGTH_HTO>",
+            "type": "Number",
+            "id": "par_r2_length_hto",
+            "description": "Minimum number of bases to retain for R2 sequence of gene expression. For most use-cases, this can be kept at 0 (default).",
+            "optional": true
+        },
+        {
+            "name": "Include introns",
+            "command-line-flag": "--par_include_introns_hto",
+            "value-key": "<--par_include_introns_hto>",
+            "type": "Flag",
+            "id": "par_include_introns_hto",
+            "description": "Whether or not to include intronic reads in the gene expression matrix.",
+            "optional": true
+        },
+        {
+            "name": "No target UMI filter",
+            "command-line-flag": "--par_no_target_umi_filter_hto",
+            "value-key": "<--par_no_target_umi_filter_hto>",
+            "type": "Flag",
+            "id": "par_no_target_umi_filter_hto",
+            "description": "Whether or not to turn off CellRanger's target UMI filtering sub-pipeline. For most use-cases, this can remain disabled (default).",
+            "optional": true
+        },
+        {
+            "name": "Expected cells",
+            "command-line-flag": "--par_expect_cells_hto",
+            "value-key": "<--par_expect_cells_hto PAR_EXPECT_CELLS_HTO>",
+            "type": "Number",
+            "id": "par_expect_cells_hto",
+            "description": "Expected number of cells. By default, CellRanger's auto-estimate algorithm will be used. For most use-cases, this can be kept at 0 (default).",
+            "optional": true
+        },
+        {
+            "name": "Force cells",
+            "command-line-flag": "--par_force_cells_hto",
+            "value-key": "<--par_force_cells_hto PAR_FORCE_CELLS_HTO>",
+            "type": "Number",
+            "id": "par_force_cells_hto",
+            "description": "Force the CellRanger count pipeline to use N cells. For most use-cases, this can be kept at 0 (default).",
+            "optional": true
+        },
+        {
+            "name": "No bam",
+            "command-line-flag": "--par_no_bam_hto",
+            "value-key": "<--par_no_bam_hto>",
+            "type": "Flag",
+            "id": "par_no_bam_hto",
+            "description": "Whether or not to skip the bam file generation in the CellRanger pipeline. For most use-cases, this can remain disabled (default).",
+            "optional": true
+        },
+
+
+
+
+        {
             "name": "Save RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step2",
-            "value-key": "[PAR_SAVE_RNA_STEP2]",
+            "value-key": "<--par_save_RNA_step2>",
             "type": "Flag",
             "id": "par_save_RNA_step2",
-            "description": "If you want to save an RNA expression matrix",
+            "description": "Whether or not to export an RNA expression matrix.",
             "optional": true
         },
         {
             "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step2",
-            "value-key": "[PAR_SAVE_METADATA_STEP2]",
+            "value-key": "<--par_save_metadata_step2>",
             "type": "Flag",
             "id": "par_save_metadata_step2",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
             "name": "Ambient RNA",
             "command-line-flag": "--par_ambient_RNA",
-            "value-key": "[PAR_AMBIENT_RNA]",
+            "value-key": "<--par_ambient_RNA>",
             "type": "Flag",
             "id": "par_ambient_RNA",
-            "description": "If you want to include ambient RNA in the analysis",
+            "description": "Whether or not to correct the feature-barcode expression matrices for ambient RNA contamination.",
+
             "optional": true
         },
         {
             "name": "Min Cells L",
             "command-line-flag": "--par_min_cells_L",
-            "value-key": "[PAR_MIN_CELLS_L]",
+            "value-key": "<--par_min_cells_L PAR_MIN_CELLS_L>",
             "type": "Number",
             "id": "par_min_cells_L",
-            "description": "Only retain genes that are present in at least a specified number of cells",
+            "description": "Only retain genes expressed in a minimum number of cells.",
             "optional": true
         },
         {
             "name": "Normalization method",
             "command-line-flag": "--par_normalization_method_step2",
-            "value-key": "[PAR_NORMALIZATION_METHOD_STEP2]",
+            "value-key": "<--par_normalization_method_step2 PAR_NORMALIZATION_METHOD_STEP2>",
             "type": "String",
             "id": "par_normalization_method_step2",
-            "description": "Normalization method",
+            "description": "Method to use for normalization (e.g., LogNormalize).",
             "optional": true
         },
         {
             "name": "Scale factor",
             "command-line-flag": "--par_scale_factor_step2",
-            "value-key": "[PAR_SCALE_FACTOR_STEP2]",
+            "value-key": "<--par_scale_factor_step2 PAR_SCALE_FACTOR_STEP2>",
             "type": "Number",
             "id": "par_scale_factor_step2",
             "description": "Scale factor",
             "optional": true
         },
         {
-            "name": "Selection method",
+            "name": "HVG selection method",
             "command-line-flag": "--par_selection_method_step2",
-            "value-key": "[PAR_SELECTION_METHOD_STEP2]",
+            "value-key": "<--par_selection_method_step2 PAR_SELECTION_METHOD_STEP2>",
             "type": "String",
             "id": "par_selection_method_step2",
-            "description": "Method for choosing the top variable features",
+            "description": "Method for selecting highly variable genes (e.g., vst).",
             "optional": true
         },
         {
-            "name": "Number of features",
+            "name": "Number of HVGs",
             "command-line-flag": "--par_nfeatures_step2",
-            "value-key": "[PAR_NFEATURES_STEP2]",
+            "value-key": "<--par_nfeatures_step2 PAR_NFEATURES_STEP2>",
             "type": "Number",
             "id": "par_nfeatures_step2",
-            "description": "Number of features to select as top variable features",
+            "description": "Number of highly variable genes to select (e.g., 2500).",
             "optional": true
         },
+
+
         {
             "name": "Save RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step3",
-            "value-key": "[PAR_SAVE_RNA_STEP3]",
+            "value-key": "<--par_save_RNA_step3>",
             "type": "Flag",
             "id": "par_save_RNA_step3",
-            "description": "If you want to save an RNA expression matrix",
+            "description": "Whether or not to export an RNA expression matrix.",
             "optional": true
         },
         {
             "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step3",
-            "value-key": "[PAR_SAVE_METADATA_STEP3]",
+            "value-key": "<--par_save_metadata_step3>",
             "type": "Flag",
             "id": "par_save_metadata_step3",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
             "name": "Directory containing Seurat object(s)",
             "command-line-flag": "--par_seurat_object_step3",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP3]",
+            "value-key": "<--par_seurat_object_step3 DIR>",
             "type": "File",
             "id": "par_seurat_object_step3",
-            "description": "Directory containing Seurat object(s)",
+            "description": "If you performed Step 2 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 3.",
             "optional": true
         },
         {
             "name": "Minimum number of unique RNA transcripts",
             "command-line-flag": "--par_nFeature_RNA_L",
-            "value-key": "[PAR_NFEATURE_RNA_L]",
+            "value-key": "<--par_nFeature_RNA_L PAR_NFEATURE_RNA_L>",
             "type": "Number",
             "id": "par_nFeature_RNA_L",
-            "description": "Minimum number of unique RNA transcripts",
+            "description":"Only retain cells expressing a minimum number of unique RNA transcripts.",
             "optional": true
         },
         {
             "name": "Maximum number of unique RNA transcripts",
             "command-line-flag": "--par_nFeature_RNA_U",
-            "value-key": "[PAR_NFEATURE_RNA_U]",
+            "value-key": "<--par_nFeature_RNA_U PAR_NFEATURE_RNA_U>",
             "type": "Number",
             "id": "par_nFeature_RNA_U",
-            "description": "Maximum number of unique RNA transcripts",
+            "description": "Only retain cells expressing a maximum number of unique RNA transcripts.",
             "optional": true
         },
         {
             "name": "Minimum number of total RNA transcripts",
             "command-line-flag": "--par_nCount_RNA_L",
-            "value-key": "[PAR_NCOUNT_RNA_L]",
+            "value-key": "<--par_nCount_RNA_L PAR_NCOUNT_RNA_L>",
             "type": "Number",
             "id": "par_nCount_RNA_L",
-            "description": "Minimum number of total RNA transcripts",
+            "description": "Only retain cells with a minimum number of total RNA transcripts.",
             "optional": true
         },
         {
             "name": "Maximum number of total RNA transcripts",
             "command-line-flag": "--par_nCount_RNA_U",
-            "value-key": "[PAR_NCOUNT_RNA_U]",
+            "value-key": "<--par_nCount_RNA_U PAR_NCOUNT_RNA_U>",
             "type": "Number",
             "id": "par_nCount_RNA_U",
-            "description": "Maximum number of total RNA transcripts",
+            "description": "Only retain cells with a maximum number of total RNA transcripts.",
             "optional": true
         },
         {
             "name": "Minimum mitochondrial RNA percentage",
             "command-line-flag": "--par_mitochondria_percent_L",
-            "value-key": "[PAR_MITOCHONDRIA_PERCENT_L]",
+            "value-key": "<--par_mitochondria_percent_L PAR_MITOCHONDRIA_PERCENT_L>",
             "type": "Number",
             "id": "par_mitochondria_percent_L",
-            "description": "Minimum mitochondrial RNA percentage",
+            "description": "Only retain cells with a minimum percentage of mitochondrial-encoded genes.",
             "optional": true
         },
         {
             "name": "Maximum mitochondrial RNA percentage",
             "command-line-flag": "--par_mitochondria_percent_U",
-            "value-key": "[PAR_MITOCHONDRIA_PERCENT_U]",
+            "value-key": "<--par_mitochondria_percent_U PAR_MITOCHONDIA_PERCENT_U>",
             "type": "Number",
             "id": "par_mitochondria_percent_U",
-            "description": "Maximum mitochondrial RNA percentage",
+            "description": "Only retain cells with a maximum percentage of mitochondrial-encoded genes.",
             "optional": true
         },
         {
             "name": "Minimum ribosomal RNA percentage",
             "command-line-flag": "--par_ribosomal_percent_L",
-            "value-key": "[PAR_RIBOSOMAL_PERCENT_L]",
+            "value-key": "<--par_ribosomal_percent_L PAR_RIBOSOMAL_PERCENT_L>",
             "type": "Number",
             "id": "par_ribosomal_percent_L",
-            "description": "Minimum ribosomal RNA percentage",
+            "description": "Only retain cells with a minimum percentage of ribosome genes.",
             "optional": true
         },
         {
             "name": "Maximum ribosomal RNA percentage",
             "command-line-flag": "--par_ribosomal_percent_U",
-            "value-key": "[PAR_RIBOSOMAL_PERCENT_U]",
+            "value-key": "<--par_ribosomal_percent_U PAR_RIBOSOMAL_PERCENT_U>",
             "type": "Number",
             "id": "par_ribosomal_percent_U",
-            "description": "Maximum ribosomal RNA percentage",
+            "description": "Only retain cells with a maximum percentage of ribosome genes.",
             "optional": true
         },
         {
             "name": "If you want to filter out mitochondrial genes",
             "command-line-flag": "--par_remove_mitochondrial_genes",
-            "value-key": "[PAR_REMOVE_MITOCHONDRIAL_GENES]",
+            "value-key": "<--par_remove_mitochondrial_genes>",
             "type": "Flag",
             "id": "par_remove_mitochondrial_genes",
-            "description": "If you want to filter out mitochondrial genes",
+            "description": "Whether or not to remove mitochondrial genes.",
             "optional": true
         },
         {
             "name": "If you want to filter out ribosomal genes",
             "command-line-flag": "--par_remove_ribosomal_genes",
-            "value-key": "[PAR_REMOVE_RIBOSOMAL_GENES]",
+            "value-key": "<--par_remove_ribosomal_genes>",
             "type": "Flag",
             "id": "par_remove_ribosomal_genes",
-            "description": "If you want to filter out ribosomal genes",
+            "description": "Whether or not to remove ribosomal genes.",
             "optional": true
         },
         {
             "name": "List of genes to remove",
             "command-line-flag": "--par_remove_genes",
-            "value-key": "[PAR_REMOVE_GENES]",
+            "value-key": "<--par_remove_genes PAR_REMOVE_GENES>",
             "type": "String",
             "id": "par_remove_genes",
-            "description": "List of genes to remove",
+            "description": "If users want to remove specific genes from their data, they may define a list of gene identifiers.",
             "optional": true
         },
         {
             "name": "If you want to regress cell cycle genes",
             "command-line-flag": "--par_regress_cell_cycle_genes",
-            "value-key": "[PAR_REGRESS_CELL_CYCLE_GENES]",
+            "value-key": "<--par_regress_cell_cycle_genes>",
             "type": "Flag",
             "id": "par_regress_cell_cycle_genes",
-            "description": "If you want to regress cell cycle genes",
+            "description": "Whether or not to regress cell cycle genes.",
             "optional": true
         },
         {
             "name": "If you want to regress a custom list of genes",
             "command-line-flag": "--par_regress_custom_genes",
-            "value-key": "[PAR_REGRESS_CUSTOM_GENES]",
+            "value-key": "<--par_regress_custom_genes>",
             "type": "Flag",
             "id": "par_regress_custom_genes",
-            "description": "If you want to regress a custom list of genes",
+            "description": "Whether or not to regress a custom list of genes.",
             "optional": true
         },
         {
             "name": "List of genes to regress",
             "command-line-flag": "--par_regress_genes",
-            "value-key": "[PAR_REGRESS_GENES]",
+            "value-key": "<--par_regress_genes PAR_REGRESS_GENES>",
             "type": "String",
             "id": "par_regress_genes",
-            "description": "List of genes to regress",
+            "description": "List of custom genes to regress.",
             "optional": true
         },
         {
             "name": "Normalization method",
             "command-line-flag": "--par_normalization_method_step3",
-            "value-key": "[PAR_NORMALIZATION_METHOD_STEP3]",
+            "value-key": "<--par_normalization_method_step3 PAR_NORMALIZATION_METHOD_STEP3>",
             "type": "String",
             "id": "par_normalization_method_step3",
-            "description": "Normalization method",
+            "description": "Method to use for normalization (e.g., LogNormalize).",
             "optional": true
         },
         {
             "name": "Scale factor",
             "command-line-flag": "--par_scale_factor_step3",
-            "value-key": "[PAR_SCALE_FACTOR_STEP3]",
+            "value-key": "<--par_scale_factor_step3 PAR_SCALE_FACTOR_STEP3>",
             "type": "Number",
             "id": "par_scale_factor_step3",
-            "description": "Scale factor",
+            "description": "Scale factor for scaling the data (e.g., 10000).",
             "optional": true
         },
         {
-            "name": "Method for choosing the top variable features",
+            "name": "HVG selection method ",
             "command-line-flag": "--par_selection_method_step3",
-            "value-key": "[PAR_SELECTION_METHOD_STEP3]",
+            "value-key": "<--par_selection_method_step3 PAR_SELECTION_METHOD_STEP3>",
             "type": "String",
             "id": "par_selection_method_step3",
-            "description": "Method for choosing the top variable features",
+            "description": "Method for selecting highly variable genes (e.g., vst).",
             "optional": true
         },
         {
-            "name": "Number of features to select as top variable features",
+            "name": "Number of HVGs",
             "command-line-flag": "--par_nfeatures_step3",
-            "value-key": "[PAR_NFEATURES_STEP3]",
+            "value-key": "<--par_nfeatures_step3 PAR_NFEATURES_STEP3>",
             "type": "Number",
             "id": "par_nfeatures_step3",
-            "description": "Number of features to select as top variable features",
+            "description": "Number of highly variable genes to select (e.g., 2500).",
             "optional": true
         },
         {
-            "name": "Number of most variable features to be reported in csv file",
+            "name": "Number of HVGs to be reported",
             "command-line-flag": "--par_top",
-            "value-key": "[PAR_TOP]",
+            "value-key": "<--par_top PAR_TOP>",
             "type": "Number",
             "id": "par_top",
-            "description": "Number of most variable features to be reported in csv file",
+            "description": "Number of highly variable genes to be reported in the exported csv file (e.g., 100).",
             "optional": true
         },
         {
-            "name": "Total Number of PCs to compute and store for RunPCA",
-            "command-line-flag": "--par_npcs_pca",
-            "value-key": "[PAR_NPCS_PCA]",
+            "name": "Number of principal components",
+            "command-line-flag": "--par_npcs_pca_step3",
+            "value-key": "<--par_npcs_pca_step3 PAR_NPCS_PCA_STEP3>",
             "type": "Number",
-            "id": "par_npcs_pca",
-            "description": "Total Number of PCs to compute and store for RunPCA",
+            "id": "par_npcs_pca_step3",
+            "description": "Total number of principal components to compute and store for principal component analysis (e.g., 50).",
             "optional": true
         },
 
         {
-            "name": "If you want to save an RNA expression matrix",
-            "command-line-flag": "--par_save_RNA_step4",
-            "value-key": "[PAR_SAVE_RNA_STEP4]",
+            "name": "Save RNA expression matrix",
+            "command-line-flag": "--par_save_RNA_step4_scrna",
+            "value-key": "<--par_save_RNA_step4_scrna>",
             "type": "Flag",
-            "id": "par_save_RNA_step4",
-            "description": "If you want to save an RNA expression matrix",
+            "id": "par_save_RNA_step4_scrna",
+            "description": "Whether or not to export an RNA expression matrix.",
             "optional": true
         },
         {
-            "name": "If you want to save a metadata dataframe",
-            "command-line-flag": "--par_save_metadata_step4",
-            "value-key": "[PAR_SAVE_METADATA_STEP4]",
+            "name": "Save metadata dataframe",
+            "command-line-flag": "--par_save_metadata_step4_scrna",
+            "value-key": "<--par_save_metadata_step4_scrna>",
             "type": "Flag",
-            "id": "par_save_metadata_step4",
-            "description": "If you want to save a metadata dataframe",
+            "id": "par_save_metadata_step4_scrna",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
             "name": "Directory containing Seurat object(s)",
-            "command-line-flag": "--par_seurat_object_step4",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP4]",
+            "command-line-flag": "--par_seurat_object_step4_scrna",
+            "value-key": "<--par_seurat_object_step4_scrna DIR>",
             "type": "File",
-            "id": "par_seurat_object_step4",
-            "description": "Directory containing Seurat object(s)",
+            "id": "par_seurat_object_step4_scrna",
+            "description": "If you performed Step 3 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 4.",
             "optional": true
         },
         {
-            "name": "Number of dimensions to use as input into UMAP",
-            "command-line-flag": "--par_RunUMAP_dims_step4",
-            "value-key": "[PAR_RUNUMAP_DIMS_STEP4]",
+            "name": "Number of dimensions to use for UMAP",
+            "command-line-flag": "--par_RunUMAP_dims_step4_scrna",
+            "value-key": "<--par_RunUMAP_dims_step4_scrna PAR_RUNUMAP_DIMS_STEP4_SCRNA>",
             "type": "Number",
-            "id": "par_RunUMAP_dims_step4",
-            "description": "Number of dimensions to use as input into UMAP",
+            "id": "par_RunUMAP_dims_step4_scrna",
+            "description": "Number of dimensions to use as input features for uniform manifold approximation and projection (e.g., 25).",
             "optional": true
         },
         {
-            "name": "Number of neighbouring points to use in local approximation of manifold structure",
+            "name": "Number of neighboring points to use for UMAP",
             "command-line-flag": "--par_RunUMAP_n_neighbors_step4",
-            "value-key": "[PAR_RUNUMAP_N_NEIGHBORS_STEP4]",
+            "value-key": "<--par_RunUMAP_n_neighbors_step4 PAR_RUNUMAP_N_NEIGHBORS_STEP4>",
             "type": "Number",
             "id": "par_RunUMAP_n_neighbors_step4",
-            "description": "Number of neighbouring points to use in local approximation of manifold structure",
+            "description": "Number of neighboring points used in local approximations of manifold structure (e.g., 45).",
             "optional": true
         },
         {
-            "name": "If you want to remove predicted doublets from downstream analyses",
-            "command-line-flag": "--par_dropDN",
-            "value-key": "[PAR_DROPDN]",
+            "name": "Remove predicted doublets from downstream analyses",
+            "command-line-flag": "--par_dropDN_scrna",
+            "value-key": "<--par_dropDN_scrna>",
             "type": "Flag",
-            "id": "par_dropDN",
-            "description": "If you want to remove predicted doublets from downstream analyses",
+            "id": "par_dropDN_scrna",
+            "description": "Whether or not to remove predicted doublets and negatives from downstream analyses.",
             "optional": true
         },
         {
-            "name": "Number of principal components to use as input doublet analysis",
+            "name": "Number of principal components for doublet detection",
             "command-line-flag": "--par_PCs",
-            "value-key": "[PAR_PCS]",
+            "value-key": "<--par_PCs PAR_PCS>",
             "type": "Number",
             "id": "par_PCs",
-            "description": "Number of principal components to use as input doublet analysis",
+            "description": "Can be informed by the elbow plot produced in Step 3.",
             "optional": true
         },
         {
-            "name": "The number of artificial doublets to generate",
+            "name": "The number of artificial doublets",
             "command-line-flag": "--par_pN",
-            "value-key": "[PAR_PN]",
+            "value-key": "<--par_pN PAR_PN>",
             "type": "Number",
             "id": "par_pN",
-            "description": "The number of artificial doublets to generate",
+            "description": "The number of artificial doublets to generate for doublet detection by DoubletFinder (e.g., 0.25). DoubletFinder is largely invariant to this parameter. We suggest keeping 0.25.",
             "optional": true
         },
         {
-            "name": "Logical representing whether SCTransform was used during original Seurat object pre-processing",
+            "name": "SCTransform pre-processing",
             "command-line-flag": "--par_sct",
-            "value-key": "[PAR_SCT]",
+            "value-key": "<--par_sct>",
             "type": "Flag",
             "id": "par_sct",
-            "description": "Logical representing whether SCTransform was used during original Seurat object pre-processing",
+            "description": "Whether SCTransform was used while processing the Seurat object. For most use-cases, this parameter can remain deactivated.",
             "optional": true
         },
         {
-            "name": "The doublet rate according to the number of cells",
+            "name": "Global expected doublet rate",
             "command-line-flag": "--par_rate_nExp",
-            "value-key": "[PAR_RATE_NEXP]",
+            "value-key": "<--par_rate_nExp PAR_RATE_NEXP>",
             "type": "Number",
             "id": "par_rate_nExp",
-            "description": "The doublet rate according to the number of cells",
+            "description": "Global expected doublet rate (e.g., for a 5% expected doublet rate, write 0.05). Expected doublet rates can be informed by the number of recovered cells. For more information, see the 10X documentation.",
             "optional": true
         },
         {
             "name": "List of sample names",
             "command-line-flag": "--par_sample_names_step4",
-            "value-key": "[PAR_SAMPLE_NAMES_STEP4]",
+            "value-key": "<--par_sample_names_step4 PAR_SAMPLE_NAMES_STEP4>",
             "type": "String",
             "id": "par_sample_names_step4",
-            "description": "List of sample names",
+            "description": "A list of sample names for each sample in the experiment. Sample names should be the same as those defined in --par_rename_samples in Step 1 and must correspond to the sample-specific expected doublet rates defined in the parameter below.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
-            "name": "List of expected doublet rates",
+            "name": "Sample-specific expected doublet rates",
             "command-line-flag": "--par_expected_doublet_rate",
-            "value-key": "[PAR_EXPECTED_DOUBLET_RATE]",
+            "value-key": "<--par_expected_doublet_rate PAR_EXPECTED_DOUBLET_RATE>",
             "type": "String",
             "id": "par_expected_doublet_rate",
-            "description": "List of expected doublet rates",
+            "description": "A vector of expected doublet rates for each sample (e.g., for a 5% sample-specific expected doublet rate, write 0.05). The expected doublet rates for each sample should be listed in the same order as the sample names in the above parameter. Make sure to have as many expected doublet rates listed as you have samples.",
+            "list": true,
+            "list-separator": ",",
+            "optional": true
+        },
+
+        {
+            "name": "MSD",
+            "command-line-flag": "--msd",
+            "value-key": "<--msd>",
+            "type": "Flag",
+            "id": "msd",
+            "description": "Before demultiplexing, activate this parameter and leave all other parameters empty to retrieve the barcode labels used in the analysis. If the barcode labels are already known, leave this parameter deactivated and proceed with the remaining parameters.",
+            "optional": true
+        },
+        {
+            "name": "Save RNA expression matrix",
+            "command-line-flag": "--par_save_RNA_step4_hto",
+            "value-key": "<--par_save_RNA_step4_hto>",
+            "type": "Flag",
+            "id": "par_save_RNA_step4_hto",
+            "description": "Whether or not to export an RNA expression matrix.",
+            "optional": true
+        },
+        {
+            "name": "Save metadata dataframe",
+            "command-line-flag": "--par_save_metadata_step4_hto",
+            "value-key": "<--par_save_metadata_step4_hto>",
+            "type": "Flag",
+            "id": "par_save_metadata_step4_hto",
+            "description": "Whether or not to export a metadata dataframe.",
+            "optional": true
+        },
+        {
+            "name": "Directory containing Seurat object(s)",
+            "command-line-flag": "--par_seurat_object_step4_hto",
+            "value-key": "<--par_seurat_object_step4_hto DIR>",
+            "type": "File",
+            "id": "par_seurat_object_step4_hto",
+            "description": "If you performed Step 3 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 4.",
+            "optional": true
+        },
+
+        {
+            "name": "Normalization method",
+            "command-line-flag": "--par_normalization_method_step4",
+            "value-key": "<--par_normalization_method_step4 PAR_NORMALIZATION_METHOD_STEP4>",
+            "type": "String",
+            "id": "par_normalization_method_step4",
+            "description": "Method for normalizing the HTO assay (e.g., CLR).",
+            "optional": true
+        },
+        {
+            "name": "Scale factor",
+            "command-line-flag": "--par_scale_factor_step4",
+            "value-key": "<--par_scale_factor_step4 PAR_SCALE_FACTOR_STEP4>",
+            "type": "Number",
+            "id": "par_scale_factor_step4",
+            "description": "Scale factor for scaling the HTO assay (e.g., 10000).",
+            "optional": true
+        },
+        {
+            "name": "Highly variable feature selection method",
+            "command-line-flag": "--par_selection_method_step4",
+            "value-key": "<--par_selection_method_step4 PAR_SELECTION_METHOD_STEP4>",
+            "type": "String",
+            "id": "par_selection_method_step4",
+            "description": "Method for selecting highly variable features in the HTO assay (e.g., vst).",
+            "optional": true
+        },
+        {
+            "name": "Number of highly variable features",
+            "command-line-flag": "--par_nfeatures_step4",
+            "value-key": "<--par_nfeatures_step4 PAR_NFEATURES_STEP4>",
+            "type": "Number",
+            "id": "par_nfeatures_step4",
+            "description": "Number of features to select as top variable features for the HTO assay (e.g., 5). This value is dependent on the number of sample specific barcodes used in the experiment.",
+            "optional": true
+        },
+        {
+            "name": "Number of dimensions to use for UMAP",
+            "command-line-flag": "--par_dims_umap",
+            "value-key": "<--par_dims_umap PAR_DIMS_UMAP>",
+            "type": "Number",
+            "id": "par_dims_umap",
+            "description": "Number of dimensions to use as input features for uniform manifold approximation and projection of HTO assay (e.g., 5).",
+            "optional": true
+        },
+        {
+            "name": "Number of neighbouring points to use for UMAP",
+            "command-line-flag": "--par_n_neighbor",
+            "value-key": "<--par_n_neighbor PAR_N_NEIGHBOR>",
+            "type": "Number",
+            "id": "par_n_neighbor",
+            "description": "Number of neighboring points used in local approximations of manifold structure (e.g., 65).",
+            "optional": true
+        },
+        {
+            "name": "Perform linear dimensional reduction",
+            "command-line-flag": "--par_dimensionality_reduction",
+            "value-key": "<--par_dimensionality_reduction>",
+            "type": "Flag",
+            "id": "par_dimensionality_reduction",
+            "description": "Whether or not to perform linear dimensionality reduction on the HTO assay.",
+            "optional": true
+        },
+        {
+            "name": "Number of principal components",
+            "command-line-flag": "--par_npcs_pca_step4",
+            "value-key": "<--par_npcs_pca_step4 PAR_NPCS_PCA_STEP4>",
+            "type": "Number",
+            "id": "par_npcs_pca_step4",
+            "description": "The number of principal components to compute and store for principal component analysis of HTO assay (e.g., 30).",
+            "optional": true
+        },
+        {
+            "name": "Remove predicted doublets from downstream analyses",
+            "command-line-flag": "--par_dropDN_hto",
+            "value-key": "<--par_dropDN_hto>",
+            "type": "Flag",
+            "id": "par_dropDN_hto",
+            "description": "Whether or not to remove predicted doublets and negatives from downstream analyses.",
+            "optional": true
+        },
+        {
+            "name": "Labels for filtered cells",
+            "command-line-flag": "--par_label_dropDN",
+            "value-key": "<--par_label_dropDN PAR_LABEL_DROPDN>",
+            "type": "String",
+            "id": "par_label_dropDN",
+            "description": "Labels used to identify doublet and negative droplets (e.g., Doublet, Negative).",
+            "optional": true
+        },
+        {
+            "name": "Droplet classification quantile threshold",
+            "command-line-flag": "--par_quantile",
+            "value-key": "<--par_quantile PAR_QUANTILE>",
+            "type": "Number",
+            "id": "par_quantile",
+            "description": "The quantile to use for droplet classification using MULTIseqDemux (e.g., 0.9).",
+            "optional": true
+        },
+        {
+            "name": "Automated threshold",
+            "command-line-flag": "--par_autoThresh",
+            "value-key": "<--par_autoThresh>",
+            "type": "Flag",
+            "id": "par_autoThresh",
+            "description": "Whether or not to perform automated threshold finding to define the best quantile for droplet classification using MULTIseqDemux. For most use cases, this parameter should be activated.",
+            "optional": true
+        },
+        {
+            "name": "Maximum iteration",
+            "command-line-flag": "--par_maxiter",
+            "value-key": "<--par_maxiter PAR_MAXITER>",
+            "type": "Number",
+            "id": "par_maxiter",
+            "description": "Maximum number of iterations to use if --par_autoThresh is activated (e.g., 5).",
+            "optional": true
+        },
+        {
+            "name": "Ridge plot layout",
+            "command-line-flag": "--par_RidgePlot_ncol",
+            "value-key": "<--par_RidgePlot_ncol PAR_RIDGEPLOT_NCOL>",
+            "type": "Number",
+            "id": "par_RidgePlot_ncol",
+            "description": "Number of columns used to display RidgePlots, which visualizes the enrichment of barcode labels across samples (e.g., 3).",
+            "optional": true
+        },
+        {
+            "name": "Old antibody labels",
+            "command-line-flag": "--par_old_antibody_label",
+            "value-key": "<--par_old_antibody_label PAR_OLD_ANTIBODY_LABEL>",
+            "type": "String",
+            "id": "par_old_antibody_label",
+            "description": "If you wish to rename the barcode labels, first list the existing barcode labels in this parameter.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
-            "name": "If you want to save an RNA expression matrix",
+            "name": "New antibody labels",
+            "command-line-flag": "--par_new_antibody_label",
+            "value-key": "<--par_new_antibody_label PAR_NEW_ANTIBODY_LABEL>",
+            "type": "String",
+            "id": "par_new_antibody_label",
+            "description": "If you wish to rename the barcode labels, list the new labels corresponding to the old labels listed in the parameter above.",
+            "list": true,
+            "list-separator": ",",
+            "optional": true
+        },
+
+        {
+            "name": "Save RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step5",
-            "value-key": "[PAR_SAVE_RNA_STEP5]",
+            "value-key": "<--par_save_RNA_step5>",
             "type": "Flag",
             "id": "par_save_RNA_step5",
-            "description": "If you want to save an RNA expression matrix",
+            "description": "Whether or not to export an RNA expression matrix.",
             "optional": true
         },
         {
-            "name": "If you want to save a metadata dataframe",
+            "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step5",
-            "value-key": "[PAR_SAVE_METADATA_STEP5]",
+            "value-key": "<--par_save_metadata_step5>",
             "type": "Flag",
             "id": "par_save_metadata_step5",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
             "name": "Directory containing Seurat object(s)",
             "command-line-flag": "--par_seurat_object_step5",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP5]",
+            "value-key": "<--par_seurat_object_step5 DIR>",
             "type": "File",
             "id": "par_seurat_object_step5",
-            "description": "Directory containing Seurat object(s)",
+            "description": "If you performed Step 4 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 5.",
             "optional": true
         },
         {
-            "name": "If you only have one Seurat object and want to skip integration",
+            "name": "Only one sample and skip integration",
             "command-line-flag": "--par_one_seurat",
-            "value-key": "[PAR_ONE_SEURAT]",
+            "value-key": "<--par_one_seurat>",
             "type": "Flag",
             "id": "par_one_seurat",
-            "description": "If you only have one Seurat object and want to skip integration",
+            "description": "Whether or not the experiment has only one sample. If this parameter is activated (only one sample), par_integrate_seurat and par_merge_seurat should be deactivated.",
             "optional": true
         },
         {
-            "name": "If you want to integrate Seurat objects",
+            "name": "Integrate Seurat objects",
             "command-line-flag": "--par_integrate_seurat",
-            "value-key": "[PAR_INTEGRATE_SEURAT]",
+            "value-key": "<--par_integrate_seurat>",
             "type": "Flag",
             "id": "par_integrate_seurat",
-            "description": "If you want to integrate Seurat objects",
+            "description": "Whether or not to integrate the samples. If activated, par_merge_seurat must be deactivated.",
             "optional": true
         },
         {
-            "name": "If you want to merge Seurat objects",
+            "name": "Merge Seurat objects",
             "command-line-flag": "--par_merge_seurat",
-            "value-key": "[PAR_MERGE_SEURAT]",
+            "value-key": "<--par_merge_seurat>",
             "type": "Flag",
             "id": "par_merge_seurat",
-            "description": "If you want to merge Seurat objects",
+            "description": "Whether or not to merge the samples. If activated, par_integrate_seurat must be deactivated.",
             "optional": true
         },
         {
-            "name": "Assay to perform normalization and scaling",
+            "name": "Default assay",
             "command-line-flag": "--par_DefaultAssay",
-            "value-key": "[PAR_DEFAULTASSAY]",
+            "value-key": "<--par_DefaultAssay PAR_DEFAULTASSAY>",
             "type": "String",
             "id": "par_DefaultAssay",
-            "description": "Assay to perform normalization and scaling",
+            "description": "The assay to perform normalization, scaling, and linear dimensional reduction on (e.g., RNA)",
             "optional": true
         },
         {
             "name": "Normalization method",
             "command-line-flag": "--par_normalization_method_step5",
-            "value-key": "[PAR_NORMALIZATION_METHOD_STEP5]",
+            "value-key": "<--par_normalization_method_step5 PAR_NORMALIZATION_METHOD_STEP5>",
             "type": "String",
             "id": "par_normalization_method_step5",
-            "description": "Normalization method",
+            "description": "Method to use for normalization (e.g., LogNormalize).",
             "optional": true
         },
         {
             "name": "Scale factor",
             "command-line-flag": "--par_scale_factor_step5",
-            "value-key": "[PAR_SCALE_FACTOR_STEP5]",
+            "value-key": "<--par_scale_factor_step5 PAR_SCALE_FACTOR_STEP5>",
             "type": "Number",
             "id": "par_scale_factor_step5",
-            "description": "Scale factor",
+            "description": "Scale factor for scaling the data (e.g., 10000).",
             "optional": true
         },
         {
-            "name": "Method for detecting top variable features",
+            "name": "HVG selection method",
             "command-line-flag": "--par_selection_method_step5",
-            "value-key": "[PAR_SELECTION_METHOD_STEP5]",
+            "value-key": "<--par_selection_method_step5 PAR_SELECTION_METHOD_STEP5>",
             "type": "String",
             "id": "par_selection_method_step5",
-            "description": "Method for detecting top variable features",
+            "description": "Method for selecting highly variable genes (e.g., vst).",
             "optional": true
         },
         {
-            "name": "Number of features to select as top variable features for integration",
+            "name": "Number of HVGs",
             "command-line-flag": "--par_nfeatures_step5",
-            "value-key": "[PAR_NFEATURES_STEP5]",
+            "value-key": "<--par_nfeatures_step5 PAR_NFEATURES_STEP5>",
             "type": "Number",
             "id": "par_nfeatures_step5",
-            "description": "Number of features to select as top variable features for integration",
+            "description": "Number of highly variable genes to select (e.g., 2500).",
             "optional": true
         },
         {
-            "name": "Which dimensions to use from the CCA to specify the neighbour search space",
+            "name": "Dimensions for neighbour search space",
             "command-line-flag": "--par_FindIntegrationAnchors_dim",
-            "value-key": "[PAR_FINDINTEGRATIONANCHORS_DIM]",
+            "value-key": "<--par_FindIntegrationAnchors_dim PAR_FINDINTEGRATIONANCHORS_DIM>",
             "type": "Number",
             "id": "par_FindIntegrationAnchors_dim",
-            "description": "Which dimensions to use from the CCA to specify the neighbour search space",
+            "description": "Which dimensions to use from the canonical correlation analysis (CCA) to specify the neighbor search space (e.g., 25).",
             "optional": true
         },
         {
-            "name": "Total Number of PCs to compute and store for RunPCA",
+            "name": "Number of principal components",
             "command-line-flag": "--par_RunPCA_npcs",
-            "value-key": "[PAR_RUNPCA_NPCS]",
+            "value-key": "<--par_RunPCA_npcs PAR_RUNPCA_NPCS>",
             "type": "Number",
             "id": "par_RunPCA_npcs",
-            "description": "Total Number of PCs to compute and store for RunPCA",
+            "description": "Total number of principal components to compute and store for principal component analysis (e.g., 30).",
             "optional": true
         },
         {
-            "name": "Which dimensions to use as input features for RunUMAP",
+            "name": "Number of dimensions to use for UMAP",
             "command-line-flag": "--par_RunUMAP_dims_step5",
-            "value-key": "[PAR_RUNUMAP_DIMS_STEP5]",
+            "value-key": "<--par_RunUMAP_dims_step5 PAR_RUNUMAP_DIMS_STEP5>",
             "type": "Number",
             "id": "par_RunUMAP_dims_step5",
-            "description": "Which dimensions to use as input features for RunUMAP",
+            "description": "Number of dimensions to use as input features for uniform manifold approximation and projection (e.g., 25).",
             "optional": true
         },
         {
-            "name": "The number of neighbouring points used in local approximations of manifold structure",
+            "name": "Number of neighbouring points to use for UMAP",
             "command-line-flag": "--par_RunUMAP_n_neighbors_step5",
-            "value-key": "[PAR_RUNUMAP_N_NEIGHBORS_STEP5]",
+            "value-key": "<--par_RunUMAP_n_neighbors_step5 PAR_RUNUMAP_N_NEIGHBORS_STEP5>",
             "type": "Number",
             "id": "par_RunUMAP_n_neighbors_step5",
-            "description": "The number of neighbouring points used in local approximations of manifold structure",
+            "description": "Number of neighboring points used in local approximations of manifold structure (e.g., 45).",
             "optional": true
         },
         {
-            "name": "Whether or not to perform JackStraw computation",
+            "name": "Compute JackStraw",
             "command-line-flag": "--par_compute_jackstraw",
-            "value-key": "[PAR_COMPUTE_JACKSTRAW]",
+            "value-key": "<--par_compute_jackstraw>",
             "type": "Flag",
             "id": "par_compute_jackstraw",
-            "description": "Whether or not to perform JackStraw computation",
+            "description": "Whether or not to perform JackStraw computation to identify significant principal components.",
             "optional": true
         },
+
         {
-            "name": "If you want to save an RNA expression matrix",
+            "name": "Save RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step6",
-            "value-key": "[PAR_SAVE_RNA_STEP6]",
+            "value-key": "<--par_save_RNA_step6>",
             "type": "Flag",
             "id": "par_save_RNA_step6",
-            "description": "If you want to save an RNA expression matrix",
+            "description": "Whether or not to save the RNA expression matrix.",
             "optional": true
         },
         {
-            "name": "If you want to save a metadata dataframe",
+            "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step6",
-            "value-key": "[PAR_SAVE_METADATA_STEP6]",
+            "value-key": "<--par_save_metadata_step6>",
             "type": "Flag",
             "id": "par_save_metadata_step6",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to save the metadata dataframe.",
             "optional": true
         },
         {
-            "name": "Path to Seurat object",
+            "name": "Directory containing Seurat object(s)",
             "command-line-flag": "--par_seurat_object_step6",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP6]",
+            "value-key": "<--par_seurat_object_step6 DIR>",
             "type": "File",
             "id": "par_seurat_object_step6",
-            "description": "Path to Seurat object",
+            "description": "If you performed Step 5 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 6.",
             "optional": true
         },
         {
-            "name": "If you skipped integration in step 5",
+            "name": "Skipped integration in step 5",
             "command-line-flag": "--par_skip_integration",
-            "value-key": "[PAR_SKIP_INTEGRATION]",
+            "value-key": "<--par_skip_integration>",
             "type": "Flag",
             "id": "par_skip_integration",
-            "description": "If you skipped integration in step 5",
+            "description": "Whether or not the user skipped integration in Step 5.",
             "optional": true
         },
         {
-            "name": "Number of PC to use as input to find neighbours",
+            "name": "Number of principal components to find neighbours",
             "command-line-flag": "--par_FindNeighbors_dims",
-            "value-key": "[PAR_FINDNEIGHBORS_DIMS]",
+            "value-key": "<--par_FindNeighbors_dims PAR_FINDNEIGHBORS_DIMS>",
             "type": "Number",
             "id": "par_FindNeighbors_dims",
-            "description": "Number of PC to use as input to find neighbours",
+            "description": "Number of principal components used as input to identify neighbours (e.g., 25). Can be informed by the elbow and Jackstraw plots produced in Step 5.",
             "optional": true
         },
         {
-            "name": "Number of PCs to use as input for UMAP",
+            "name": "Number of principal components for UMAP",
             "command-line-flag": "--par_RunUMAP_dims_step6",
-            "value-key": "[PAR_RUNUMAP_DIMS_STEP6]",
+            "value-key": "<--par_RunUMAP_dims_step6 PAR_RUNUMAP_DIMS_STEP6>",
             "type": "Number",
             "id": "par_RunUMAP_dims_step6",
-            "description": "Number of PCs to use as input for UMAP",
+            "description": "Number of dimensions to use as input features for uniform manifold approximation and projection (e.g., 25).",
             "optional": true
         },
         {
-            "name": "Defines k for the k-nearest neighbour algorithm",
+            "name": "K-nearest neighbours",
             "command-line-flag": "--par_FindNeighbors_k_param",
-            "value-key": "[PAR_FINDNEIGHBORS_K_PARAM]",
+            "value-key": "<--par_FindNeighbors_k_param PAR_FINDNEIGHBORS_K_PARAM>",
             "type": "Number",
             "id": "par_FindNeighbors_k_param",
-            "description": "Defines k for the k-nearest neighbour algorithm",
+            "description": "Defines k for the k-nearest neighbor algorithm (e.g., 45).",
             "optional": true
         },
         {
-            "name": "Sets the cutoff for acceptable Jaccard index when computing the neighbourhood overlap for the SNN construction",
+            "name": "Shared nearest neighbours cut off",
             "command-line-flag": "--par_FindNeighbors_prune_SNN",
-            "value-key": "[PAR_FINDNEIGHBORS_PRUNE_SNN]",
+            "value-key": "<--par_FindNeighbors_prune_SNN PAR_FINDNEIGHBORS_PRUNE_SNN>",
             "type": "Number",
             "id": "par_FindNeighbors_prune_SNN",
-            "description": "Sets the cutoff for acceptable Jaccard index when computing the neighbourhood overlap for the SNN construction",
+            "description": "Sets the cut off for acceptable Jaccard index when computing the neighborhood overlap for the shared nearest-neighbour construction (e.g., 0.067).",
             "optional": true
         },
         {
-            "name": "Value of the clustering resolution parameter",
+            "name": "Clustering resolution",
             "command-line-flag": "--par_FindClusters_resolution",
-            "value-key": "[PAR_FINDCLUSTERS_RESOLUTION]",
+            "value-key": "<--par_FindClusters_resolution PAR_FINDCLUSTERS_RESOLUTION>",
             "type": "String",
             "id": "par_FindClusters_resolution",
-            "description": "Value of the clustering resolution parameter",
+            "description": "Value of the clustering resolution parameter. It is recommended to cluster at various resolutions. (e.g., 0, 0.05, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0).",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
-            "name": "If you want to compute ARI",
+            "name": "Compute Adjusted Rand Index",
             "command-line-flag": "--par_compute_ARI",
-            "value-key": "[PAR_COMPUTE_ARI]",
+            "value-key": "<--par_compute_ARI>",
             "type": "Flag",
             "id": "par_compute_ARI",
-            "description": "If you want to compute ARI",
+            "description": "Whether or not you want to compute the Adjusted Rand Index (ARI) to evaluate the stability of clusters across user-defined clustering resolutions.",
             "optional": true
         },
         {
-            "name": "Number of repetitions of generated clusters to calculate ARI",
+            "name": "Clustering iterations for Adjusted Rand Index computation",
             "command-line-flag": "--par_RI_reps",
-            "value-key": "[PAR_RI_REPS]",
+            "value-key": "<--par_RI_reps PAR_RI_REPS>",
             "type": "Number",
             "id": "par_RI_reps",
-            "description": "Number of repetitions of generated clusters to calculate ARI",
+            "description": "Number of iterations for clustering the data at a given resolution to compute the Adjusted Rand Index (e.g., 25).",
             "optional": true
         },
+
+        {
+            "name": "Marker GSEA",
+            "command-line-flag": "--markergsea",
+            "value-key": "<--markergsea>",
+            "type": "Flag",
+            "id": "markergsea",
+            "description": "Identify marker genes for each cluster and GSEA using EnrichR libraries.",
+            "optional": true
+        },
+        {
+            "name": "Known markers",
+            "command-line-flag": "--knownmarkers",
+            "value-key": "<--knownmarkers>",
+            "type": "Flag",
+            "id": "knownmarkers",
+            "description": "Profile the individual or aggregated expression of known marker genes.",
+            "optional": true
+        },
+        {
+            "name": "Reference annotation",
+            "command-line-flag": "--referenceannotation",
+            "value-key": "<--referenceannotation>",
+            "type": "Flag",
+            "id": "referenceannotation",
+            "description": "Generate annotation predictions based on the annotations of a reference Seurat object.",
+            "optional": true
+        },
+        {
+            "name": "Add cell type annotations",
+            "command-line-flag": "--annotate",
+            "value-key": "<--annotate>",
+            "type": "Flag",
+            "id": "annotate",
+            "description": "Add clustering annotations to Seurat object metadata.",
+            "optional": true
+        },
+
         {
             "name": "If you want to save an RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step7",
-            "value-key": "[PAR_SAVE_RNA_STEP7]",
+            "value-key": "<--par_save_RNA_step7>",
             "type": "Flag",
             "id": "par_save_RNA_step7",
             "description": "If you want to save an RNA expression matrix",
             "optional": true
         },
         {
-            "name": "If you want to save a metadata dataframe",
+            "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step7",
-            "value-key": "[PAR_SAVE_METADATA_STEP7]",
+            "value-key": "<--par_save_metadata_step7>",
             "type": "Flag",
             "id": "par_save_metadata_step7",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
-            "name": "Path to Seurat object",
+            "name": "Directory containing Seurat object(s)",
             "command-line-flag": "--par_seurat_object_step7",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP7]",
+            "value-key": "<--par_seurat_object_step7 DIR>",
             "type": "File",
             "id": "par_seurat_object_step7",
-            "description": "Path to Seurat object",
+            "description": "If you performed Step 6 of the pipeline, keep this parameter empty. Otherwise, if users have an existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 7.",
             "optional": true
         },
         {
-            "name": "The cluster resolution that you want to use",
+            "name": "Clustering resolution",
             "command-line-flag": "--par_level_cluster",
-            "value-key": "[PAR_LEVEL_CLUSTER]",
+            "value-key": "<--par_level_cluster PAR_LEVEL_CLUSTER>",
             "type": "String",
             "id": "par_level_cluster",
-            "description": "The cluster resolution that you want to use",
+            "description": "The cluster resolution that you want to annotate (e.g., integrated_snn_res.0.75).",
             "optional": true
         },
+
         {
-            "name": "If you want to identify cluster specific markers",
+            "name": "Identify cluster-specific markers",
             "command-line-flag": "--par_run_find_marker",
-            "value-key": "[PAR_RUN_FIND_MARKER]",
+            "value-key": "<--par_run_find_marker>",
             "type": "Flag",
             "id": "par_run_find_marker",
-            "description": "If you want to identify cluster specific markers",
+            "description": "Whether or not to identify marker genes for each cluster.",
             "optional": true
         },
         {
-            "name": "If you want to run EnrichR GSEA on cluster-specific markers",
-            "command-line-flag": "--par_run_enrichR",
-            "value-key": "[PAR_RUN_ENRICHR]",
-            "type": "Flag",
-            "id": "par_run_enrichR",
-            "description": "If you want to run EnrichR GSEA on cluster-specific markers",
-            "optional": true
-        },
-        {
-            "name": "Number of top markers based on avg_log2FC",
+            "name": "Number of top markers",
             "command-line-flag": "--par_top_sel",
-            "value-key": "[PAR_TOP_SEL]",
+            "value-key": "<--par_top_sel PAR_TOP_SEL>",
             "type": "Number",
             "id": "par_top_sel",
-            "description": "Number of top markers based on avg_log2FC",
+            "description": "Number of top markers to display in heatmap based on avg_log2FC (e.g., 5).",
             "optional": true
         },
         {
-            "name": "Character vector of EnrichR databases to search for enrichment",
+            "name": "Run EnrichR GSEA on cluster-specific markers",
+            "command-line-flag": "--par_run_enrichR",
+            "value-key": "<--par_run_enrichR>",
+            "type": "Flag",
+            "id": "par_run_enrichR",
+            "description": "Whether or not to run gene set enrichment analysis (GSEA) on the marker genes for each cluster using the EnrichR tools. Note that the HPC must have access to the internet to run GSEA.",
+            "optional": true
+        },
+        {
+            "name": "EnrichR databases",
             "command-line-flag": "--par_db",
-            "value-key": "[PAR_DB]",
+            "value-key": "<--par_db PAR_DB>",
             "type": "String",
             "id": "par_db",
-            "description": "Character vector of EnrichR databases to search for enrichment",
+            "description": "Character vector of EnrichR databases that define cell types. The top marker genes for each cluster will be tested for enrichment across these databases (e.g., Descartes_Cell_Types_and_Tissue_2021, CellMarker_Augmented_2021, Azimuth_Cell_Types_2021).",
             "optional": true
         },
+
         {
-            "name": "If you want to perform module score computation",
+            "name": "Compute module score",
             "command-line-flag": "--par_run_module_score",
-            "value-key": "[PAR_RUN_MODULE_SCORE]",
+            "value-key": "<--par_run_module_score>",
             "type": "Flag",
             "id": "par_run_module_score",
-            "description": "If you want to perform module score computation",
+            "description": "Path to the csv file containing the gene sets for the module score (see ScRNAbox documentation for an example .csv file).",
             "optional": true
         },
         {
-            "name": "If you want to visualize markers",
-            "command-line-flag": "--par_run_visualize_markers",
-            "value-key": "[PAR_RUN_VISUALIZE_MARKERS]",
-            "type": "Flag",
-            "id": "par_run_visualize_markers",
-            "description": "If you want to visualize markers",
-            "optional": true
-        },
-        {
-            "name": "csv file containing the genes sets for module score",
+            "name": "Gene sets for module score",
             "command-line-flag": "--par_module_score",
-            "value-key": "[PAR_MODULE_SCORE]",
+            "value-key": "<--par_module_score FILE>",
             "type": "File",
             "id": "par_module_score",
             "description": "csv file containing the genes sets for module score",
             "optional": true
         },
         {
-            "name": "List of markers that you want to visualize",
+            "name": "Visualize known markers",
+            "command-line-flag": "--par_run_visualize_markers",
+            "value-key": "<--par_run_visualize_markers>",
+            "type": "Flag",
+            "id": "par_run_visualize_markers",
+            "description": "Whether or not to visualize the individual expression of known marker genes.",
+            "optional": true
+        },
+        {
+            "name": "List of known markers to visualize",
             "command-line-flag": "--par_select_features_list",
-            "value-key": "[PAR_SELECT_FEATURES_LIST]",
+            "value-key": "<--par_select_features_list PAR_SELECT_FEATURES_LIST>",
             "type": "String",
             "id": "par_select_features_list",
-            "description": "List of markers that you want to visualize",
+            "description": "List of marker genes whose expression will be visualized individually.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
         {
-            "name": "csv file containing the markers that you want to visualize",
+            "name": "CSV file containing known markers to visualize",
             "command-line-flag": "--par_select_features_csv",
-            "value-key": "[PAR_SELECT_FEATURES_CSV]",
+            "value-key": "<--par_select_features_csv FILE>",
             "type": "File",
             "id": "par_select_features_csv",
-            "description": "csv file containing the markers that you want to visualize",
+            "description": "To define multiple feature lists for individual visualization, provide the path to a CSV file where each column represents a list. The column names should describe the list names, and all features belonging to the same list should be placed in the corresponding column.",
             "optional": true
         },
+
         {
-            "name": "Seurat RDS object to use as the reference",
+            "name": "Reference Seurat RDS object",
             "command-line-flag": "--par_reference",
-            "value-key": "[PAR_REFERENCE]",
+            "value-key": "<--par_reference FILE>",
             "type": "File",
             "id": "par_reference",
-            "description": "Seurat RDS object to use as the reference",
+            "description": "Path to the reference Seurat object.",
             "optional": true
         },
         {
-            "name": "Define an arbitrary name for the reference object",
+            "name": "Name of reference object",
             "command-line-flag": "--par_reference_name",
-            "value-key": "[PAR_REFERENCE_NAME]",
+            "value-key": "<--par_reference_name PAR_REFERENCE_NAME>",
             "type": "String",
             "id": "par_reference_name",
-            "description": "Define an arbitrary name for the reference object",
+            "description": "The name of the metadata column in the reference Seurat object that defines cell type labels to be transferred to the query object (e.g., Cell_Type).",
             "optional": true
         },
         {
-            "name": "Name of a metadata column in the reference Seurat object that contains cell type annotations",
+            "name": "Metadata column in the reference Seurat object containing cell type annotations",
             "command-line-flag": "--par_level_celltype",
-            "value-key": "[PAR_LEVEL_CELLTYPE]",
+            "value-key": "<--par_level_celltype PAR_LEVEL_CELLTYPE>",
             "type": "String",
             "id": "par_level_celltype",
             "description": "Name of a metadata column in the reference Seurat object that contains cell type annotations",
             "optional": true
         },
         {
-            "name": "How many dimensions to use to find transfer anchors between query and reference dataset",
+            "name": "Number of dimensions for reference-based annotation",
             "command-line-flag": "--par_FindTransferAnchors_dim",
-            "value-key": "[PAR_FINDTRANSFERANCHORS_DIM]",
+            "value-key": "<--par_FindTransferAnchors_dim PAR_FINDTRANSFERANCHORS_DIM>",
             "type": "Number",
             "id": "par_FindTransferAnchors_dim",
-            "description": "How many dimensions to use to find transfer anchors between query and reference dataset",
+            "description": "Number of dimensions used to find transfer anchors between the reference and query Seurat objects (e.g., 50).",
             "optional": true
         },
         {
-            "name": "This will increase your RAM usage so set this number mindfully",
+            "name": "Maximum allowed size of global objects",
             "command-line-flag": "--par_futureglobalsmaxSize",
-            "value-key": "[PAR_FUTUREGLOBALSMAXSIZE]",
+            "value-key": "<--par_futureglobalsmaxSize PAR_FUTUREGLOBALSMAXSIZE>",
             "type": "Number",
             "id": "par_futureglobalsmaxSize",
-            "description": "This will increase your RAM usage so set this number mindfully",
+            "description": "The maximum allowed size of global objects that can be exported to parallel workers (e.g., 62914560000). This will increase your RAM usage so set this number mindfully.",
             "optional": true
         },
+
         {
-            "name": "The clustering resolution to annotate",
+            "name": "Clustering resolution to annotate",
             "command-line-flag": "--par_annotate_resolution",
-            "value-key": "[PAR_ANNOTATE_RESOLUTION]",
+            "value-key": "<--par_annotate_resolution PAR_ANNOTATE_RESOLUTION>",
             "type": "String",
             "id": "par_annotate_resolution",
-            "description": "The clustering resolution to annotate",
+            "description": "Which clustering resolution to annotate (e.g., integrated_snn_res.0.75).",
             "optional": true
         },
         {
-            "name": "The name of the metadata slot under which the cluster labels will be stored",
+            "name": "Metadata slot for storing cluster labels",
             "command-line-flag": "--par_name_metadata",
-            "value-key": "[PAR_NAME_METADATA]",
+            "value-key": "<--par_name_metadata PAR_NAME_METADATA>",
             "type": "String",
             "id": "par_name_metadata",
-            "description": "The name of the metadata slot under which the cluster labels will be stored",
+            "description": "The name of the metadata slot that will contain the annotations (e.g., Cell_Types1).",
             "optional": true
         },
         {
             "name": "A list of cluster labels",
             "command-line-flag": "--par_annotate_labels",
-            "value-key": "[PAR_ANNOTATE_LABELS]",
+            "value-key": "<--par_annotate_labels PAR_ANNOTATE_LABELS>",
             "type": "String",
             "id": "par_annotate_labels",
-            "description": "A list of cluster labels",
+            "description": "A list of cluster labels, with one label per cluster at the specified clustering resolution. Avoid using underscores '_' in the labels.",
             "list": true,
             "list-separator": ",",
             "optional": true
         },
+
         {
-            "name": "If you want to save an RNA expression matrix",
+            "name": "Add metadata",
+            "command-line-flag": "--addmeta",
+            "value-key": "<--addmeta>",
+            "type": "Flag",
+            "id": "addmeta",
+            "description": "Add metadata information to the Seurat object to facilitate DGE contrasts.",
+            "optional": true
+        },
+        {
+            "name": "Run DGE",
+            "command-line-flag": "--rundge",
+            "value-key": "<--rundge>",
+            "type": "Flag",
+            "id": "rundge",
+            "description": "Perform DGE contrasts.",
+            "optional": true
+        },
+
+        {
+            "name": "Save RNA expression matrix",
             "command-line-flag": "--par_save_RNA_step8",
-            "value-key": "[PAR_SAVE_RNA_STEP8]",
+            "value-key": "<--par_save_RNA_step8>",
             "type": "Flag",
             "id": "par_save_RNA_step8",
-            "description": "If you want to save an RNA expression matrix",
+            "description": "Whether or not to export an RNA expression matrix.",
             "optional": true
         },
         {
-            "name": "If you want to save a metadata dataframe",
+            "name": "Save metadata dataframe",
             "command-line-flag": "--par_save_metadata_step8",
-            "value-key": "[PAR_SAVE_METADATA_STEP8]",
+            "value-key": "<--par_save_metadata_step8>",
             "type": "Flag",
             "id": "par_save_metadata_step8",
-            "description": "If you want to save a metadata dataframe",
+            "description": "Whether or not to export a metadata dataframe.",
             "optional": true
         },
         {
-            "name": "Path to Seurat object",
+            "name": "Directory containing Seurat object(s)",
             "command-line-flag": "--par_seurat_object_step8",
-            "value-key": "[PAR_SEURAT_OBJECT_STEP8]",
+            "value-key": "<--par_seurat_object_step8 DIR>",
             "type": "File",
             "id": "par_seurat_object_step8",
-            "description": "Path to Seurat object",
+            "description": "If you performed Step 7 of the pipeline, keep this parameter empty. Otherwise, if users have existing Seurat object(s), they may provide the path to a directory that contains the Seurat object(s) to initiate the pipeline at Step 8.",
             "optional": true
         },
+
         {
-            "name": "Column from the Seurat object that you want to use to add the new metadata",
-            "command-line-flag": "--par_merge_meta",
-            "value-key": "[PAR_MERGE_META]",
-            "type": "String",
-            "id": "par_merge_meta",
-            "description": "Column from the Seurat object that you want to use to add the new metadata",
-            "optional": true
-        },
-        {
-            "name": "Path to a csv file describing new metadata that should be added to the Seurat object",
+            "name": "New metadata",
             "command-line-flag": "--par_metadata",
-            "value-key": "[PAR_METADATA]",
+            "value-key": "<--par_metadata FILE>",
             "type": "File",
             "id": "par_metadata",
-            "description": "Path to a csv file describing new metadata that should be added to the Seurat object",
+            "description": "Path to the csv file containing the new metadata to be added to the Seurat object.",
             "optional": true
         },
         {
-            "name": "If you want to perform cell-based DGE with all cells",
+            "name": "Seurat column to merge new metadata",
+            "command-line-flag": "--par_merge_meta",
+            "value-key": "<--par_merge_meta PAR_MERGE_META>",
+            "type": "String",
+            "id": "par_merge_meta",
+            "description": "The column from the Seurat metadata that will be used to merge the new metadata (e.g., orig.ident). This column must also exist in the csv file containing new metadata defined in the above parameter.",
+            "optional": true
+        },
+
+        {
+            "name": "Perform cell-based DGE with all cells",
             "command-line-flag": "--par_run_cell_based_all_cells",
-            "value-key": "[PAR_RUN_CELL_BASED_ALL_CELLS]",
+            "value-key": "<--par_run_cell_based_all_cells>",
             "type": "Flag",
             "id": "par_run_cell_based_all_cells",
-            "description": "If you want to perform cell-based DGE with all cells",
+            "description": "Whether or not to compute cell-based DGE across all cell types together.",
             "optional": true
         },
         {
-            "name": "If you want to perform cell-based DGE on each cell type group",
-            "command-line-flag": "--par_run_cell_based_celltype_groups",
-            "value-key": "[PAR_RUN_CELL_BASED_CELLTYPE_GROUPS]",
-            "type": "Flag",
-            "id": "par_run_cell_based_celltype_groups",
-            "description": "If you want to perform cell-based DGE on each cell type group",
-            "optional": true
-        },
-        {
-            "name": "If you want to perform sample-based DGE with all cells",
-            "command-line-flag": "--par_run_sample_based_all_cells",
-            "value-key": "[PAR_RUN_SAMPLE_BASED_ALL_CELLS]",
-            "type": "Flag",
-            "id": "par_run_sample_based_all_cells",
-            "description": "If you want to perform sample-based DGE with all cells",
-            "optional": true
-        },
-        {
-            "name": "If you want to perform sample-based DGE on each cell type group",
-            "command-line-flag": "--par_run_sample_based_celltype_groups",
-            "value-key": "[PAR_RUN_SAMPLE_BASED_CELLTYPE_GROUPS]",
-            "type": "Flag",
-            "id": "par_run_sample_based_celltype_groups",
-            "description": "If you want to perform sample-based DGE on each cell type group",
-            "optional": true
-        },
-        {
-            "name": "Which statistical method to use when computing DGE using individual cells as replicates",
-            "command-line-flag": "--par_statistical_method",
-            "value-key": "[PAR_STATISTICAL_METHOD]",
-            "type": "String",
-            "id": "par_statistical_method",
-            "description": "Which statistical method to use when computing DGE using individual cells as replicates",
-            "optional": true
-        },
-        {
-            "name": "To perform cell-based DGE using all cells",
+            "name": "Contrast matrix for cell-based DGE with all cells",
             "command-line-flag": "--contrast_cell_based_all_cells",
-            "value-key": "[CONTRAST_CELL_BASED_ALL_CELLS]",
+            "value-key": "<--contrast_cell_based_all_cells FILE>",
             "type": "File",
             "id": "contrast_cell_based_all_cells",
-            "description": "To perform cell-based DGE using all cells",
+            "description": "Path to the contrast matrix for cell-based DGE with all cells. For an example contrast matrix see the scRNAbox documentation (https://neurobioinfo.github.io/scrnabox/site/Step8/).",
             "optional": true
         },
         {
-            "name": "To perform cell-based DGE using cell type groups",
+            "name": "Perform cell-based DGE with cell type groups",
+            "command-line-flag": "--par_run_cell_based_celltype_groups",
+            "value-key": "<--par_run_cell_based_celltype_groups>",
+            "type": "Flag",
+            "id": "par_run_cell_based_celltype_groups",
+            "description": "Whether or not to compute cell-based DGE within each cell type group independently.",
+            "optional": true
+        },
+        {
+            "name": "Contrast matrix for cell-based DGE with cell type groups",
             "command-line-flag": "--contrast_cell_based_celltype_groups",
-            "value-key": "[CONTRAST_CELL_BASED_CELLTYPE_GROUPS]",
+            "value-key": "<--contrast_cell_based_celltype_groups FILE>",
             "type": "File",
             "id": "contrast_cell_based_celltype_groups",
-            "description": "To perform cell-based DGE using cell type groups",
+            "description": "Path to the contrast matrix for cell-based DGE with cell type groups. For an example contrast matrix see the scRNAbox documentation (https://neurobioinfo.github.io/scrnabox/site/Step8/).",
             "optional": true
         },
         {
-            "name": "To perform sample-based DGE using all cells",
+            "name": "Statistical method for cell-based DGE",
+            "command-line-flag": "--par_statistical_method",
+            "value-key": "<--par_statistical_method PAR_STATISTICAL_METHOD>",
+            "type": "String",
+            "id": "par_statistical_method",
+            "description": "Which statistical framework to use for computing cell-based DGE (e.g., MAST).",
+            "optional": true
+        },
+        {
+            "name": "Perform sample-based DGE with all cells",
+            "command-line-flag": "--par_run_sample_based_all_cells",
+            "value-key": "<--par_run_sample_based_all_cells>",
+            "type": "Flag",
+            "id": "par_run_sample_based_all_cells",
+            "description": "Whether or not to compute cell-based DGE across all cell types together.",
+            "optional": true
+        },
+        {
+            "name": "Contrast matrix for sample-based DGE with all cells",
             "command-line-flag": "--contrast_sample_based_all_cells",
-            "value-key": "[CONTRAST_SAMPLE_BASED_ALL_CELLS]",
+            "value-key": "<--contrast_sample_based_all_cells FILE>",
             "type": "File",
             "id": "contrast_sample_based_all_cells",
-            "description": "To perform sample-based DGE using all cells",
+            "description": "Path to the contrast matrix for sample-based DGE with all cells. For an example contrast matrix see the scRNAbox documentation (https://neurobioinfo.github.io/scrnabox/site/Step8/).",
             "optional": true
         },
         {
-            "name": "To perform sample-based DGE using all cells",
+            "name": "Perform sample-based DGE with cell type groups.",
+            "command-line-flag": "--par_run_sample_based_celltype_groups",
+            "value-key": "<--par_run_sample_based_celltype_groups>",
+            "type": "Flag",
+            "id": "par_run_sample_based_celltype_groups",
+            "description": "Whether or not to compute sample-based DGE within each cell type group independently.",
+            "optional": true
+        },
+        {
+            "name": "Contrast matrix for sample-based DGE with cell type groups",
             "command-line-flag": "--contrast_sample_based_celltype_groups",
-            "value-key": "[CONTRAST_SAMPLE_BASED_CELLTYPE_GROUPS]",
+            "value-key": "<--contrast_sample_based_celltype_groups FILE>",
             "type": "File",
             "id": "contrast_sample_based_celltype_groups",
-            "description": "To perform sample-based DGE using all cells",
+            "description": "Path to the contrast matrix for sample-based DGE with cell type groups. For an example contrast matrix see the scRNAbox documentation (https://neurobioinfo.github.io/scrnabox/site/Step8/).",
             "optional": true
         }
     ],
@@ -1282,47 +1589,48 @@
             "path-template": "scRNAbox_dir",
             "optional": false,
             "command-line-flag": "--output_dir",
-            "value-key": "[OUTPUT_DIR]"
+            "value-key": "<--output_dir DIR>"
         }
     ],
-    "groups": [
+"groups": [
         {
-            "id": "overall",
-            "name": "Overall",
-            "description": "Overall options",
+            "id": "General",
+            "name": "General",
+            "description": "General parameters",
             "members": [
-                "working_dir",
-                "steps",
+                "working_directory",
                 "method",
-                "knownmarkers"
+                "steps"
             ]
         },
         {
-            "id": "step_1",
-            "name": "Step 1",
-            "description": "Step 1 options",
+            "id": "step_1_scrna",
+            "name": "Step 1 SCRNA Track: FASTQ to expression matrix",
+            "description": "Step 1 parameters for SCRNA Track",
             "members": [
-                "par_automated_library_prep",
-                "par_fastq_directory",
+                "par_automated_library_prep_scrna",
+                "par_fastq_directory_scrna",
                 "par_sample_names_step1",
-                "par_rename_samples",
+                "par_rename_samples_scrna",
                 "par_new_sample_names",
-                "par_paired_end_seq",
-                "par_ref_dir_grch",
-                "par_r1_length",
-                "par_r2_length",
-                "par_include_introns",
-                "par_no_target_umi_filter",
-                "par_expect_cells",
-                "par_force_cells",
-                "par_no_bam"
+                "par_paired_end_seq_scrna",
+                "par_ref_dir_grch_scrna",
+                "par_r1_length_scrna",
+                "par_r2_length_scrna",
+                "par_include_introns_scrna",
+                "par_no_target_umi_filter_scrna",
+                "par_expect_cells_scrna",
+                "par_force_cells_scrna",
+                "par_no_bam_scrna"
             ]
         },
         {
-            "id": "step1_HTO",
-            "name": "Step 1 HTO",
+            "id": "step_1_hto",
+            "name": "Step 1 HTO parameters",
             "description": "Step 1 options (HTO track)",
             "members": [
+                "par_automated_library_prep_hto",
+                "par_fastq_directory_hto",
                 "par_RNA_run_names",
                 "par_HTO_run_names",
                 "par_seq_run_names",
@@ -1330,13 +1638,22 @@
                 "name",
                 "read",
                 "pattern",
-                "sequence"
+                "sequence",
+                "par_ref_dir_grch_hto",
+                "par_paired_end_seq_hto",
+                "par_r1_length_hto",
+                "par_r2_length_hto",
+                "par_include_introns_hto",
+                "par_no_target_umi_filter_hto",
+                "par_expect_cells_hto",
+                "par_force_cells_hto",
+                "par_no_bam_hto"
             ]
         },
         {
             "id": "step_2",
-            "name": "Step 2",
-            "description": "Step 2 options",
+            "name": "Step 2: Create Seurat object and remove ambient RNA",
+            "description": "Step 2 parameters",
             "members": [
                 "par_save_RNA_step2",
                 "par_save_metadata_step2",
@@ -1350,8 +1667,8 @@
         },
         {
             "id": "step_3",
-            "name": "Step 3",
-            "description": "Step 3 options",
+            "name": "Step 3: Quality control and filtering",
+            "description": "Step 3 parameters",
             "members": [
                 "par_save_RNA_step3",
                 "par_save_metadata_step3",
@@ -1375,20 +1692,20 @@
                 "par_selection_method_step3",
                 "par_nfeatures_step3",
                 "par_top",
-                "par_npcs_pca"
+                "par_npcs_pca_step3"
             ]
         },
         {
-            "id": "step_4",
-            "name": "Step 4",
-            "description": "Step 4 options",
+            "id": "step_4_scrna",
+            "name": "STEP4 SCRNA Track: Doublet removal",
+            "description": "Step 4 parameters for SCRNA Track",
             "members": [
-                "par_save_RNA_step4",
-                "par_save_metadata_step4",
-                "par_seurat_object_step4",
-                "par_RunUMAP_dims_step4",
+                "par_save_RNA_step4_scrna",
+                "par_save_metadata_step4_scrna",
+                "par_seurat_object_step4_scrna",
+                "par_RunUMAP_dims_step4_scrna",
                 "par_RunUMAP_n_neighbors_step4",
-                "par_dropDN",
+                "par_dropDN_scrna",
                 "par_PCs",
                 "par_pN",
                 "par_sct",
@@ -1398,9 +1715,37 @@
             ]
         },
         {
+            "id": "step_4_hto",
+            "name": "Step 4 HTO Track: Demultiplexing ",
+            "description": "Step 4 parameters for HTO Track",
+            "members": [
+                "msd",
+                "par_save_RNA_step4_hto",
+                "par_save_metadata_step4_hto",
+                "par_seurat_object_step4_hto",
+                "par_normalization_method_step4",
+                "par_scale_factor_step4",
+                "par_selection_method_step4",
+                "par_nfeatures_step4",
+                "par_dims_umap",
+                "par_n_neighbor",
+                "par_dimensionality_reduction",
+                "par_npcs_pca_step4",
+                "par_dropDN_hto",
+                "par_label_dropDN",
+                "par_quantile",
+                "par_autoThresh",
+                "par_maxiter",
+                "par_RidgePlot_ncol",
+                "par_old_antibody_label",
+                "par_new_antibody_label"
+
+            ]
+        },
+        {
             "id": "step_5",
-            "name": "Step 5",
-            "description": "Step 5 options",
+            "name": "Step 5: Sample integration",
+            "description": "Step 5 parameters",
             "members": [
                 "par_save_RNA_step5",
                 "par_save_metadata_step5",
@@ -1422,8 +1767,8 @@
         },
         {
             "id": "step_6",
-            "name": "Step 6",
-            "description": "Step 6 options",
+            "name": "Step 6: Clustering",
+            "description": "Step 6 parameters",
             "members": [
                 "par_save_RNA_step6",
                 "par_save_metadata_step6",
@@ -1435,62 +1780,118 @@
                 "par_FindNeighbors_prune_SNN",
                 "par_FindClusters_resolution",
                 "par_compute_ARI",
-                "par_RI_reps",
-                "msd"
+                "par_RI_reps"
             ]
         },
         {
-            "id": "step_7",
-            "name": "Step 7",
-            "description": "Step 7 options",
+            "id": "step_7_tool",
+            "name": "Step 7: Cell type annotation",
+            "description": "Step 7 parameters\n Note: ScRNAbox provides three methods for cell type annotation, as well as an option to add cell type annotations to the Seurat object’s metadata:\n\n(1) Marker Gene Set Enrichment Analysis (GSEA),\n(2) Known Markers,\n(3) Reference-Based Annotation,\n(4) Add Cell Type Annotations.Each method has its own set of parameters as described below.\n\nOnly the parameters relevant to the method currently being run need to be defined.\nIn addition to the method-specific parameters, there are general parameters that must be defined for each run, regardless of the method being used.",
             "members": [
-                "par_save_RNA_step7",
-                "par_save_metadata_step7",
-                "par_seurat_object_step7",
-                "par_level_cluster",
-                "par_run_find_marker",
-                "par_run_enrichR",
-                "par_top_sel",
-                "par_db",
-                "par_run_module_score",
-                "par_run_visualize_markers",
-                "par_module_score",
-                "par_select_features_list",
-                "par_select_features_csv",
-                "par_reference",
-                "par_reference_name",
-                "par_level_celltype",
-                "par_FindTransferAnchors_dim",
-                "par_futureglobalsmaxSize",
-                "par_annotate_resolution",
-                "par_name_metadata",
-                "par_annotate_labels",
                 "markergsea",
+                "knownmarkers",
                 "referenceannotation",
                 "annotate"
             ]
         },
         {
+            "id": "step_7_general",
+            "name": "Step 7 general parameters",
+            "description": "Step 7 general parameters",
+            "members": [
+                "par_save_RNA_step7",
+                "par_save_metadata_step7",
+                "par_seurat_object_step7",
+                "par_level_cluster"
+            ]
+        },
+        {
+            "id": "step_7_marker_gsea",
+            "name": "Step 7 Marker GSEA parameters",
+            "description": "Step 7 Marker GSEA parameters",
+            "members": [
+                "par_run_find_marker",
+                "par_top_sel",
+                "par_run_enrichR",
+                "par_db"
+            ]
+        },
+        {
+            "id": "step_7_known_markers",
+            "name": "Step 7 Known markers parameters",
+            "description": "Step 7 Known markers parameters",
+            "members": [
+                "par_run_module_score",
+                "par_module_score",
+                "par_run_visualize_markers",
+                "par_select_features_list",
+                "par_select_features_csv"
+            ]
+        },
+        {
+            "id": "step_7_reference_annotation",
+            "name": "Step 7 Reference-based annotation parameters",
+            "description": "Step 7 Reference-based annotation parameters",
+            "members": [
+                "par_reference",
+                "par_reference_name",
+                "par_level_celltype",
+                "par_FindTransferAnchors_dim",
+                "par_futureglobalsmaxSize"
+            ]
+        },
+        {
+            "id": "step_7",
+            "name": "Step 7 Add cell type annotations parameters",
+            "description": "Step 7 parameters",
+            "members": [
+                "par_annotate_resolution",
+                "par_name_metadata",
+                "par_annotate_labels"
+            ]
+        },
+        {
             "id": "step_8",
-            "name": "Step 8",
-            "description": "Step 8 options",
+            "name": "Step 8: Differential gene expression analysis",
+            "description": "Step 8 parameters\n\nNote: Step 8 comprises two distinct components:\n\n(1) Add metadata\n(2) Run differential gene expression (DGE) analysis\n\nAdd metadata allows users to add meta data containing phenotypic and experimental information to the Seurat object, which can then be used to define the groups used for DGE analysis. Run DGE analysis computes DGE between conditions. ScRNAbox provides options to compute DGE across all cell types together or individual cell types independently. Additionally, scRNAbox can compute cell-based or sample-based (pseudobulk) DGE.",
+            "members": [
+                "addmeta",
+                "rundge"
+            ]
+        },
+        {
+            "id": "step_8_general",
+            "name": "Step 8 general parameters",
+            "description": "Each component has its own set of parameters as described below.\n\nOnly the parameters relevant to the component currently being run need to be defined.\nIn addition to the component-specific parameters, there are general parameters that must be defined for each run, regardless of the component being run.",
             "members": [
                 "par_save_RNA_step8",
                 "par_save_metadata_step8",
-                "par_seurat_object_step8",
-                "par_merge_meta",
+                "par_seurat_object_step8"
+            ]
+        },
+        {
+            "id": "step_8_add_meta",
+            "name": "Step 8 Add metadata parameters",
+            "description": "Step 8 Add metadata parameters",
+            "members": [
                 "par_metadata",
+                "par_merge_meta"
+            ]
+        },
+        {
+            "id": "step_8_dge",
+            "name": "Step 8 Differential Gene Expression parameters",
+            "description": "Step 8 Differential Gene Expression parameters",
+            "members": [
                 "par_run_cell_based_all_cells",
-                "par_run_cell_based_celltype_groups",
-                "par_run_sample_based_all_cells",
-                "par_run_sample_based_celltype_groups",
-                "par_statistical_method",
                 "contrast_cell_based_all_cells",
+                "par_run_cell_based_celltype_groups",
                 "contrast_cell_based_celltype_groups",
+                "par_statistical_method",
+                "par_run_sample_based_all_cells",
                 "contrast_sample_based_all_cells",
-                "contrast_sample_based_celltype_groups",
-                "addmeta",
-                "rundge"
+                "par_run_sample_based_celltype_groups",
+                "contrast_sample_based_celltype_groups"
             ]
         }
     ],
@@ -1498,19 +1899,19 @@
         "cbrain:author": "Natacha Beck <nbeck@mcin.ca>",
         "cbrain:integrator_modules": {
             "BoutiquesInputCopier": {
-                "working_dir":         { "checkbox_hidden": true }
+                "working_directory":         { "checkbox_hidden": true }
             },
             "BoutiquesFileTypeVerifier": {
-                "working_dir":         ["ScrnaboxOutput"]
+                "working_directory":         ["ScrnaboxOutput"]
             },
             "BoutiquesOutputFileTypeSetter": {
                 "outdir": "ScrnaboxOutput"
             },
-            "BoutiquesPostProcessingCleaner": ["[WORKING_DIR]"],
+            "BoutiquesPostProcessingCleaner": ["<-d DIR>", "scRNAbox_dir"],
             "BoutiquesScrnaboxResourceManager": {
                 "1": {
                     "ram": 150,
-                    "walltime": 360
+                    "walltime": 660
                 },
                 "2": {
                     "ram": 16,
