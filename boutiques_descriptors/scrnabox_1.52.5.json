@@ -1907,7 +1907,7 @@
             "BoutiquesOutputFileTypeSetter": {
                 "outdir": "ScrnaboxOutput"
             },
-            "BoutiquesPostProcessingCleaner": ["<-d DIR>"],
+            "BoutiquesPostProcessingCleaner": ["<-d DIR>", "scRNAbox_dir"],
             "BoutiquesScrnaboxResourceManager": {
                 "1": {
                     "ram": 150,
