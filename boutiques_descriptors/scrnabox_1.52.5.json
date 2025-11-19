@@ -1911,51 +1911,63 @@
             "BoutiquesScrnaboxResourceManager": {
                 "1": {
                     "ram": 150,
-                    "walltime": 660
+                    "walltime": 660,
+                    "cpu": 10
                 },
                 "2": {
                     "ram": 16,
-                    "walltime": 40
+                    "walltime": 40,
+                    "cpu": 10
                 },
                 "3": {
                     "ram": 16,
-                    "walltime": 60
+                    "walltime": 60,
+                    "cpu": 10
                 },
                 "4": {
                     "ram": 45,
-                    "walltime": 40
+                    "walltime": 40,
+                    "cpu": 10
                 },
                 "5": {
                     "ram": 16,
-                    "walltime": 40
+                    "walltime": 40,
+                    "cpu": 10
                 },
                 "6": {
                     "ram": 16,
-                    "walltime": 50
+                    "walltime": 50,
+                    "cpu": 10
                 },
                 "7_markergsea": {
                     "ram": 16,
-                    "walltime": 50
+                    "walltime": 50,
+                    "cpu": 4
                 },
                 "7_knownmarkers": {
                     "ram": 16,
-                    "walltime": 50
+                    "walltime": 50,
+                    "cpu": 4
                 },
                 "7_referenceannotation": {
                     "ram": 150,
-                    "walltime": 90
+                    "walltime": 90,
+                    "cpu": 10
                 },
                 "7_annotate": {
                     "ram": 16,
-                    "walltime": 50
+                    "walltime": 50,
+                    "cpu": 4
                 },
                 "8_addmeta": {
                     "ram": 16,
-                    "walltime": 90
+                    "walltime": 90,
+                    "cpu": 4
                 },
                 "8_rundge": {
                     "ram": 40,
-                    "walltime": 90
+                    "walltime": 90,
+                    "cpu": 10
                 }
             }
         }
