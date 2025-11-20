@@ -37,8 +37,9 @@ module BoutiquesScrnaboxResourceManager
     last_step           ||= first_step
     selected_steps        = (first_step..last_step).to_a.map(&:to_s)
 
-    walltime = 0
-    ram      = 0
+    walltime  = 0
+    ram       = 0
+    cpu_cores = 0
 
     # Use suggested resources for each step
     suggested_resources_by_steps.each do |step_option, resources|
@@ -48,10 +49,13 @@ module BoutiquesScrnaboxResourceManager
         next if option.present? && invoke_params[option].blank?
 
         step_wall = resources["walltime"]
-        walltime += step_wall
+        walltime += step_wall if step_wall
 
         step_ram  = resources["ram"]
-        ram       = step_ram if step_ram > ram
+        ram       = step_ram if step_ram && step_ram > ram
+
+        step_cpu  = resources["cpu"]
+        cpu_cores = step_cpu if step_cpu && step_cpu > cpu_cores
     end
 
 
@@ -60,6 +64,7 @@ module BoutiquesScrnaboxResourceManager
 
     descriptor["suggested-resources"]["walltime-estimate"] = walltime * 60
     descriptor["suggested-resources"]["ram"]               = ram
+    descriptor["suggested-resources"]["cpu-cores"]         = cpu_cores
 
     return descriptor
   end
