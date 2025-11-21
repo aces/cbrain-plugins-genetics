@@ -899,15 +899,15 @@ def main():
 
     config_file = open(config_file_path, "w")
 
-    if args.R_path:
-        config_file.write("R_LIB_PATH=" + args.R_path + "\n")
-    else:
-        # Check for R_LIB_PATH in the environment variables
-        if "R_LIB_PATH" in os.environ:
-            config_file.write("R_LIB_PATH=" + os.environ["R_LIB_PATH"] + "\n")
-        else:
-            print_log("Please provide the path to the R library directory using the --R_path argument or set the R_LIB_PATH environment variable.")
-            sys.exit(2)
+    # if args.R_path:
+    #     config_file.write("R_LIB_PATH=" + args.R_path + "\n")
+    # else:
+    #     # Check for R_LIB_PATH in the environment variables
+    #     if "R_LIB_PATH" in os.environ:
+    #         config_file.write("R_LIB_PATH=" + os.environ["R_LIB_PATH"] + "\n")
+    #     else:
+    #         print_log("Please provide the path to the R library directory using the --R_path argument or set the R_LIB_PATH environment variable.")
+    #         sys.exit(2)
 
     if args.method:
         config_file.write("SCRNA_METHOD=" + args.method + "\n")

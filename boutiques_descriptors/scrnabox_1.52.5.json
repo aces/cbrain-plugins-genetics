@@ -20,7 +20,7 @@
             "id": "working_directory",
             "default-value": "scRNAbox_workdir",
             "description": "Provide nothing to run scRNAbox from step 1. Provide the output of a previous run to continue processing further",
-            "optional": false
+            "optional": true
         },
 
         {
