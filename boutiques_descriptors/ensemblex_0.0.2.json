@@ -1,0 +1,541 @@
+{
+    "name": "ensemblex",
+    "schema-version": "0.5",
+    "tool-version": "0.0.2",
+    "author": "MNI BIOINFO CORE",
+    "url": "https://github.com/neurobioinfo/ensemblex",
+    "command-line": "ensemblex_wrapper.py [METHOD] [WORKING_DIR] [PAR_demuxalot_genotype_names] [PAR_demuxalot_prior_strength] [PAR_demuxalot_minimum_coverage] [PAR_demuxalot_minimum_alternative_coverage] [PAR_demuxalot_n_best_snps_per_donor] [PAR_demuxalot_genotypes_prior_strength] [PAR_demuxalot_doublet_prior] [PAR_freemuxlet_nsample] [PAR_demuxlet_field] [PAR_vireo_N] [PAR_vireo_type] [PAR_vireo_processes] [PAR_vireo_minMAF] [PAR_vireo_minCOUNT] [PAR_vireo_forcelearnGT] [PAR_minimap2] [PAR_freebayes] [PAR_vartrix_umi] [PAR_vartrix_mapq] [PAR_vartrix_threads] [PAR_souporcell_k] [PAR_souporcell_t] [PAR_ensemblex_sample_size] [PAR_ensemblex_expected_doublet_rate] [PAR_ensemblex_merge_constituents] [PAR_ensemblex_probabilistic_weighted_ensemble] [PAR_ensemblex_preliminary_parameter_sweep] [PAR_ensemblex_nCD] [PAR_ensemblex_pT] [PAR_ensemblex_graph_based_doublet_detection] [PAR_ensemblex_preliminary_ensemble_independent_doublet] [PAR_ensemblex_ensemble_independent_doublet] [PAR_ensemblex_doublet_Demuxalot_threshold] [PAR_ensemblex_doublet_Demuxalot_no_threshold] [PAR_ensemblex_doublet_Demuxlet_threshold] [PAR_ensemblex_doublet_demuxlet_no_threshold] [PAR_ensemblex_doublet_souporcell_thresholD] [PAR_ensemblex_doublet_souporcell_no_threshold] [PAR_ensemblex_doublet_vireo_threshold] [PAR_ensemblex_doublet_vireo_no_threshold] [PAR_ensemblex_compute_singlet_confidence]",
+    "description": "ensemblex is an ensemble demultiplexing tool for single-cell RNA sequencing data that combines multiple demultiplexing algorithms to improve accuracy.",
+    "suggested-resources": {
+        "walltime-estimate": 300,
+        "ram": 16
+    },
+    "inputs": [
+    {
+            "name": "Method",
+            "command-line-flag": "--method",
+            "value-key": "[METHOD]",
+            "type": "String",
+            "id": "method",
+            "description": "Demultiplexing method",
+            "value-choices": ["GT", "noGT"],
+            "default-value": "GT",
+            "optional": false
+        },
+        {
+            "name": "Working directory",
+            "command-line-flag": "--working_dir",
+            "value-key": "[WORKING_DIR]",
+            "type": "File",
+            "id": "working_dir",
+            "description": "Working directory for ensemblex analysis",
+            "optional": false
+        },
+        {
+            "name": "Demuxalot genotype names",
+            "command-line-flag": "--PAR_demuxalot_genotype_names",
+            "value-key": "[PAR_demuxalot_genotype_names]",
+            "type": "String",
+            "list": true,
+            "id": "PAR_demuxalot_genotype_names",
+            "description": "List of Sample ID's in the sample VCF file (comma-separated)",
+            "optional": true
+        },
+        {
+            "name": "Demuxalot prior strength",
+            "command-line-flag": "--PAR_demuxalot_prior_strength",
+            "value-key": "[PAR_demuxalot_prior_strength]",
+            "type": "Number",
+            "id": "PAR_demuxalot_prior_strength",
+            "description": "Read prior strength",
+            "default-value": 100,
+            "optional": true
+        },
+        {
+            "name": "Demuxalot minimum coverage",
+            "command-line-flag": "--PAR_demuxalot_minimum_coverage",
+            "value-key": "[PAR_demuxalot_minimum_coverage]",
+            "type": "Number",
+            "id": "PAR_demuxalot_minimum_coverage",
+            "description": "Minimum read coverage",
+            "default-value": 200,
+            "optional": true
+        },
+        {
+            "name": "Demuxalot minimum alternative coverage",
+            "command-line-flag": "--PAR_demuxalot_minimum_alternative_coverage",
+            "value-key": "[PAR_demuxalot_minimum_alternative_coverage]",
+            "type": "Number",
+            "id": "PAR_demuxalot_minimum_alternative_coverage",
+            "description": "Minimum alternative read coverage",
+            "default-value": 10,
+            "optional": true
+        },
+        {
+            "name": "Demuxalot n best SNPs per donor",
+            "command-line-flag": "--PAR_demuxalot_n_best_snps_per_donor",
+            "value-key": "[PAR_demuxalot_n_best_snps_per_donor]",
+            "type": "Number",
+            "id": "PAR_demuxalot_n_best_snps_per_donor",
+            "description": "Number of best snps for each donor to use for demultiplexing",
+            "default-value": 100,
+            "optional": true
+        },
+        {
+            "name": "Demuxalot genotypes prior strength",
+            "command-line-flag": "--PAR_demuxalot_genotypes_prior_strength",
+            "value-key": "[PAR_demuxalot_genotypes_prior_strength]",
+            "type": "Number",
+            "id": "PAR_demuxalot_genotypes_prior_strength",
+            "description": "Genotype prior strength",
+            "default-value": 1,
+            "optional": true
+        },
+        {
+            "name": "Demuxalot doublet prior",
+            "command-line-flag": "--PAR_demuxalot_doublet_prior",
+            "value-key": "[PAR_demuxalot_doublet_prior]",
+            "type": "Number",
+            "id": "PAR_demuxalot_doublet_prior",
+            "description": "Doublet prior strength",
+            "default-value": 0.25,
+            "optional": true
+        },
+        {
+            "name": "Demuxlet field",
+            "command-line-flag": "--PAR_demuxlet_field",
+            "value-key": "[PAR_demuxlet_field]",
+            "type": "String",
+            "id": "PAR_demuxlet_field",
+            "description": "Field to extract from VCF file",
+            "value-choices": ["GT", "PL", "GP"],
+            "default-value": "GT",
+            "optional": true
+        },
+        {
+            "name": "Freemuxlet pooled samples",
+            "command-line-flag": "--PAR_freemuxlet_nsample",
+            "value-key": "[PAR_freemuxlet_nsample]",
+            "type": "Number",
+            "id": "PAR_freemuxlet_nsample",
+            "description": "Number of pooled samples",
+            "optional": true
+        },
+        {
+            "name": "Vireo N",
+            "command-line-flag": "--PAR_vireo_N",
+            "value-key": "[PAR_vireo_N]",
+            "type": "Number",
+            "id": "PAR_vireo_N",
+            "description": "Number of pooled samples",
+            "optional": true
+        },
+        {
+            "name": "Vireo type",
+            "command-line-flag": "--PAR_vireo_type",
+            "value-key": "[PAR_vireo_type]",
+            "type": "String",
+            "id": "PAR_vireo_type",
+            "description": "Field to extract from VCF file",
+            "value-choices": ["GT", "PL", "GP"],
+            "default-value": "GT",
+            "optional": true
+        },
+        {
+            "name": "Vireo processes",
+            "command-line-flag": "--PAR_vireo_processes",
+            "value-key": "[PAR_vireo_processes]",
+            "type": "Number",
+            "id": "PAR_vireo_processes",
+            "description": "Number of subprocesses for computing",
+            "default-value": 20,
+            "optional": true
+        },
+        {
+            "name": "Vireo minimum MAF",
+            "command-line-flag": "--PAR_vireo_minMAF",
+            "value-key": "[PAR_vireo_minMAF]",
+            "type": "Number",
+            "id": "PAR_vireo_minMAF",
+            "description": "Minimum minor allele frequency",
+            "default-value": 0.1,
+            "optional": true
+        },
+        {
+            "name": "Vireo minimum count",
+            "command-line-flag": "--PAR_vireo_minCOUNT",
+            "value-key": "[PAR_vireo_minCOUNT]",
+            "type": "Number",
+            "id": "PAR_vireo_minCOUNT",
+            "description": "Minimum aggregated count",
+            "default-value": 20,
+            "optional": true
+        },
+        {
+            "name": "Vireo force learn GT",
+            "command-line-flag": "--PAR_vireo_forcelearnGT",
+            "value-key": "[PAR_vireo_forcelearnGT]",
+            "type": "Flag",
+            "id": "PAR_vireo_forcelearnGT",
+            "description": "Whether or not to treat donor GT as prior only",
+            "optional": true
+        },
+        {
+            "name": "Minimap2 parameters",
+            "command-line-flag": "--PAR_minimap2",
+            "value-key": "[PAR_minimap2]",
+            "type": "String",
+            "id": "PAR_minimap2",
+            "description": "Minimap2 parameters",
+            "default-value": "-ax splice -t 8 -G50k -k 21 -w 11 --sr -A2 -B8 -O12,32 -E2,1 -r200 -p.5 -N20 -f1000,5000 -n2 -m20 -s40 -g2000 -2K50m --secondary=no",
+            "optional": true
+        },
+        {
+            "name": "Freebayes parameters",
+            "command-line-flag": "--PAR_freebayes",
+            "value-key": "[PAR_freebayes]",
+            "type": "String",
+            "id": "PAR_freebayes",
+            "description": "Freebayes parameters",
+            "default-value": " -iXu -C 2 -q 20 -n 3 -E 1 -m 30 --min-coverage 6",
+            "optional": true
+        },
+        {
+            "name": "Vartrix UMI",
+            "command-line-flag": "--PAR_vartrix_umi",
+            "value-key": "[PAR_vartrix_umi]",
+            "type": "Flag",
+            "id": "PAR_vartrix_umi",
+            "description": "Whether or no to consider UMI information when populating coverage matrices",
+            "optional": true
+        },
+        {
+            "name": "Vartrix MAPQ",
+            "command-line-flag": "--PAR_vartrix_mapq",
+            "value-key": "[PAR_vartrix_mapq]",
+            "type": "Number",
+            "id": "PAR_vartrix_mapq",
+            "description": "Minimum read mapping quality",
+            "default-value": 30,
+            "optional": true
+        },
+        {
+            "name": "Vartrix threads",
+            "command-line-flag": "--PAR_vartrix_threads",
+            "value-key": "[PAR_vartrix_threads]",
+            "type": "Number",
+            "id": "PAR_vartrix_threads",
+            "description": "Number of threads for computing",
+            "default-value": 8,
+            "optional": true
+        },
+        {
+            "name": "Souporcell k",
+            "command-line-flag": "--PAR_souporcell_k",
+            "value-key": "[PAR_souporcell_k]",
+            "type": "Number",
+            "id": "PAR_souporcell_k",
+            "description": "Number of pooled samples",
+            "optional": true
+        },
+        {
+            "name": "Souporcell threads",
+            "command-line-flag": "--PAR_souporcell_t",
+            "value-key": "[PAR_souporcell_t]",
+            "type": "Number",
+            "id": "PAR_souporcell_t",
+            "description": "Number of threads for computing",
+            "default-value": 8,
+            "optional": true
+        },
+        {
+            "name": "Ensemblex sample size",
+            "command-line-flag": "--PAR_ensemblex_sample_size",
+            "value-key": "[PAR_ensemblex_sample_size]",
+            "type": "Number",
+            "id": "PAR_ensemblex_sample_size",
+            "description": "Number of pooled samples",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex expected doublet rate",
+            "command-line-flag": "--PAR_ensemblex_expected_doublet_rate",
+            "value-key": "[PAR_ensemblex_expected_doublet_rate]",
+            "type": "Number",
+            "id": "PAR_ensemblex_expected_doublet_rate",
+            "description": "Expected doublet rate for the pool",
+            "default-value": 0.12,
+            "optional": true
+        },
+        {
+            "name": "Ensemblex merge constituents",
+            "command-line-flag": "--PAR_ensemblex_merge_constituents",
+            "value-key": "[PAR_ensemblex_merge_constituents]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_merge_constituents",
+            "description": "Whether or not to merge the output files of the constituent demultiplexing tools",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex probabilistic weighted ensemble",
+            "command-line-flag": "--PAR_ensemblex_probabilistic_weighted_ensemble",
+            "value-key": "[PAR_ensemblex_probabilistic_weighted_ensemble]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_probabilistic_weighted_ensemble",
+            "description": "Whether or not to perform Step 1: Probabilistic-weighted ensemble",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex preliminary parameter sweep",
+            "command-line-flag": "--PAR_ensemblex_preliminary_parameter_sweep",
+            "value-key": "[PAR_ensemblex_preliminary_parameter_sweep]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_preliminary_parameter_sweep",
+            "description": "Whether or not to perform a preliminary parameter sweep for Step 2",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex nCD",
+            "command-line-flag": "--PAR_ensemblex_nCD",
+            "value-key": "[PAR_ensemblex_nCD]",
+            "type": "Number",
+            "id": "PAR_ensemblex_nCD",
+            "description": "Manually defined number of confident doublets in the pool (nCD)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex pT",
+            "command-line-flag": "--PAR_ensemblex_pT",
+            "value-key": "[PAR_ensemblex_pT]",
+            "type": "Number",
+            "id": "PAR_ensemblex_pT",
+            "description": "Manually defined percentile threshold of the nearest neighbour frequency (pT)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex graph based doublet detection",
+            "command-line-flag": "--PAR_ensemblex_graph_based_doublet_detection",
+            "value-key": "[PAR_ensemblex_graph_based_doublet_detection]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_graph_based_doublet_detection",
+            "description": "Whether or not to perform Step 2: Graph-based doublet detection",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex preliminary ensemble independent doublet",
+            "command-line-flag": "--PAR_ensemblex_preliminary_ensemble_independent_doublet",
+            "value-key": "[PAR_ensemblex_preliminary_ensemble_independent_doublet]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_preliminary_ensemble_independent_doublet",
+            "description": "Whether or not to perform a preliminary parameter sweep for Step 3",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex ensemble independent doublet",
+            "command-line-flag": "--PAR_ensemblex_ensemble_independent_doublet",
+            "value-key": "[PAR_ensemblex_ensemble_independent_doublet]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_ensemble_independent_doublet",
+            "description": "Whether or not to perform Step 3: Ensemble-independent doublet detection",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Demuxalot threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Demuxalot_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Demuxalot_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Demuxalot_threshold",
+            "description": "Whether or not to label doublets identified by Demuxalot as doublets (with threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Demuxalot no threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Demuxalot_no_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Demuxalot_no_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Demuxalot_no_threshold",
+            "description": "Whether or not to label doublets identified by Demuxalot as doublets (no threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Demuxlet threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Demuxlet_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Demuxlet_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Demuxlet_threshold",
+            "description": "Whether or not to label doublets identified by Demuxlet as doublets (with threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Demuxlet no threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Demuxlet_no_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Demuxlet_no_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Demuxlet_no_threshold",
+            "description": "Whether or not to label doublets identified by Demuxlet as doublets (no threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Souporcell threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Souporcell_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Souporcell_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Souporcell_threshold",
+            "description": "Whether or not to label doublets identified by Souporcell as doublets (with threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Souporcell no threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Souporcell_no_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Souporcell_no_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Souporcell_no_threshold",
+            "description": "Whether or not to label doublets identified by Souporcell as doublets (no threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Vireo threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Vireo_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Vireo_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Vireo_threshold",
+            "description": "Whether or not to label doublets identified by Vireo as doublets (with threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex doublet Vireo no threshold",
+            "command-line-flag": "--PAR_ensemblex_doublet_Vireo_no_threshold",
+            "value-key": "[PAR_ensemblex_doublet_Vireo_no_threshold]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_doublet_Vireo_no_threshold",
+            "description": "Whether or not to label doublets identified by Vireo as doublets (no threshold)",
+            "optional": true
+        },
+        {
+            "name": "Ensemblex compute singlet confidence",
+            "command-line-flag": "--PAR_ensemblex_compute_singlet_confidence",
+            "value-key": "[PAR_ensemblex_compute_singlet_confidence]",
+            "type": "Flag",
+            "id": "PAR_ensemblex_compute_singlet_confidence",
+            "description": "Whether or not to compute ensemblex's singlet confidence score",
+            "optional": true
+        }
+    ],
+    "output-files": [
+        {
+            "id": "output_dir",
+            "description": "Final output of the ensemblex pipeline",
+            "name": "The output directory",
+            "path-template": "[WORKING_DIR]",
+            "optional": false
+        }
+    ],
+    "groups": [
+        {
+            "id": "general",
+            "name": "General",
+            "description": "General parameters",
+            "members": [
+                "method",
+                "working_dir"
+            ]
+        },
+        {
+            "id": "demuxalot",
+            "name": "Demuxalot",
+            "description": "Demuxalot parameters",
+            "members": [
+                "PAR_demuxalot_genotype_names",
+                "PAR_demuxalot_prior_strength",
+                "PAR_demuxalot_minimum_coverage",
+                "PAR_demuxalot_minimum_alternative_coverage",
+                "PAR_demuxalot_n_best_snps_per_donor",
+                "PAR_demuxalot_genotypes_prior_strength",
+                "PAR_demuxalot_doublet_prior"
+            ]
+        },
+        {
+            "id": "demuxlet",
+            "name": "Demuxlet",
+            "description": "Demuxlet parameters",
+            "members": [
+                "PAR_demuxlet_field"
+            ]
+        },
+        {
+            "id": "freemuxlet",
+            "name": "Freemuxlet",
+            "description": "Freemuxlet parameters",
+            "members": [
+                "PAR_freemuxlet_nsample"
+            ]
+        },
+        {
+            "id": "vireo",
+            "name": "Vireo",
+            "description": "Vireo parameters",
+            "members": [
+                "PAR_vireo_N",
+                "PAR_vireo_type",
+                "PAR_vireo_processes",
+                "PAR_vireo_minMAF",
+                "PAR_vireo_minCOUNT",
+                "PAR_vireo_forcelearnGT"
+            ]
+        },
+        {
+            "id": "souporcell",
+            "name": "Souporcell",
+            "description": "Souporcell parameters",
+            "members": [
+                "PAR_minimap2",
+                "PAR_freebayes",
+                "PAR_vartrix_umi",
+                "PAR_vartrix_mapq",
+                "PAR_vartrix_threads",
+                "PAR_souporcell_k",
+                "PAR_souporcell_t"
+            ]
+        },
+        {
+            "id": "ensemblex_algorithm",
+            "name": "Ensemblex Algorithm",
+            "description": "Ensemblex algorithm parameters",
+            "members": [
+                "PAR_ensemblex_sample_size",
+                "PAR_ensemblex_expected_doublet_rate",
+                "PAR_ensemblex_merge_constituents",
+                "PAR_ensemblex_probabilistic_weighted_ensemble",
+                "PAR_ensemblex_preliminary_parameter_sweep",
+                "PAR_ensemblex_nCD",
+                "PAR_ensemblex_pT",
+                "PAR_ensemblex_graph_based_doublet_detection",
+                "PAR_ensemblex_preliminary_ensemble_independent_doublet",
+                "PAR_ensemblex_ensemble_independent_doublet",
+                "PAR_ensemblex_doublet_Demuxalot_threshold",
+                "PAR_ensemblex_doublet_Demuxalot_no_threshold",
+                "PAR_ensemblex_doublet_Demuxlet_threshold",
+                "PAR_ensemblex_doublet_Demuxlet_no_threshold",
+                "PAR_ensemblex_doublet_Souporcell_threshold",
+                "PAR_ensemblex_doublet_Souporcell_no_threshold",
+                "PAR_ensemblex_doublet_Vireo_threshold",
+                "PAR_ensemblex_doublet_Vireo_no_threshold",
+                "PAR_ensemblex_compute_singlet_confidence"
+            ]
+        }
+    ],
+    "custom": {
+        "cbrain:author": "Natacha Beck <nbeck@mcin.ca>",
+        "cbrain:integrator_modules": {
+            "BoutiquesInputCopier": {
+                "working_dir": { "checkbox_hidden": true }
+            },
+            "BoutiquesFileTypeVerifier": {
+                "working_dir": ["EnsemblexOutput"]
+            },
+            "BoutiquesOutputFileTypeSetter": {
+                "output_dir": "EnsemblexOutput"
+            }
+        }
+    }
+}
