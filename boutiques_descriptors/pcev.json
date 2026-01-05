@@ -1,0 +1,78 @@
+{
+    "command-line": "bash run_pcevCBRAIN.sh [OUTPUT] [Y_DATA] [X_DATA] [C_DATA]",
+    "tool-version": "1.0.0",
+    "suggested-resources": {
+        "walltime-estimate": 10000
+    },
+    "output-files": [
+        {
+            "optional": false,
+            "id": "folder_out",
+            "path-template": "[OUTPUT]",
+            "description": "A folder containing the output files",
+            "list": false,
+            "name": "Output folder"
+        }
+    ],
+    "doi": "10.5281/zenodo.4687114",
+    "description": "Principal component of explained variance (PCEV) is a statistical tool for the analysis of a multivariate response vector. It is a dimension-reduction technique, similar to Principal component analysis (PCA), that seeks to maximize the proportion of variance (in the response vector) being explained by a set of covariates.",
+    "container-image": {
+        "image": "GreenwoodLab/pcev_pipelineCBRAIN:pcev_v1.0",
+        "index": "shub://",
+        "type": "singularity"
+    },
+    "name": "pcev",
+    "custom": {
+        "cbrain:author": "Natacha Beck"
+    },
+    "inputs": [
+        {
+            "optional": false,
+            "id": "y_data",
+            "value-key": "[Y_DATA]",
+            "description": "The name of the csv file corresponding to Y, the response matrix",
+            "list": false,
+            "type": "File",
+            "name": "Y file"
+        },
+        {
+            "optional": false,
+            "id": "x_data",
+            "value-key": "[X_DATA]",
+            "description": "The covariates matrix",
+            "list": false,
+            "type": "File",
+            "name": "X file"
+        },
+        {
+            "optional": true,
+            "id": "c_data",
+            "value-key": "[C_DATA]",
+            "description": "The confounders matrix",
+            "list": false,
+            "type": "File",
+            "name": "C file"
+        },
+        {
+            "optional": false,
+            "id": "outdir",
+            "value-key": "[OUTPUT]",
+            "default-value": "pcev_output",
+            "list": false,
+            "type": "String",
+            "description": "Output directory name.",
+            "name": "Output directory"
+        }
+    ],
+    "schema-version": "0.5",
+    "tags": {
+        "domain": [
+            "bioinformatics",
+            "genetic"
+        ]
+    },
+    "author": "Greenwood Lab Montreal",
+    "online-platform-urls": [
+        "https://portal.cbrain.mcgill.ca/userfiles?prepare_tool_id=77"
+    ]
+}
