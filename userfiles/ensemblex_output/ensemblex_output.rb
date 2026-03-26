@@ -28,4 +28,4 @@ class EnsemblexOutput < FileCollection
       "Ensemblex output"
     end
 
-  end
+end
