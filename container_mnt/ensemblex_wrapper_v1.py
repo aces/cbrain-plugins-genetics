@@ -73,8 +73,8 @@ def parse_args_list():
     parser.add_argument("--gene_expression_bai",  type=is_file,        help="Gene expression bam index file of the pooled samples (e.g., 10X Genomics possorted_genome_bam.bam.bai)")
     parser.add_argument("--barcodes",             type=is_file,        help="Barcodes tsv file of the pooled cells (e.g., 10X Genomics barcodes.tsv)")
     parser.add_argument("--pooled_samples",       type=is_file,        help="VCF file describing the genotypes of the pooled samples (optional, required for demultiplexing tools with prior genotype information)")
-    parser.add_argument("--genome_reference",     type=is_file,        help="Genome reference fasta file (e.g., 10X Genomics)")
-    parser.add_argument("--genome_reference_fai", type=is_file,        help="Genome reference fasta index file (e.g., 10X Genomics)")
+    parser.add_argument("--genome_reference",     type=str,            help="Genome reference fasta file (e.g., 10X Genomics)")
+    parser.add_argument("--genome_reference_fai", type=str,            help="Genome reference fasta index file (e.g., 10X Genomics)")
     parser.add_argument("--genotype_reference",   type=is_file,        help="Population reference vcf file (e.g., 1000 Genomes Project)")
 
     ##################
