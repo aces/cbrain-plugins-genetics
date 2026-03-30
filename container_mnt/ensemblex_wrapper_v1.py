@@ -168,6 +168,7 @@ def parse_args_list():
 def build_file_io_ctx(args):
     file_io_ctx                            = types.SimpleNamespace()
     base_workdir                           = os.path.join(os.getcwd(), args.working_dir)
+    file_io_ctx.working_dir                = base_workdir
     base_workdir_inputfiles                = os.path.join(base_workdir, "input_files")
     file_io_ctx.config_ensemblex_ini       = os.path.join(base_workdir, "job_info", "configs", "ensemblex_config.ini")
     file_io_ctx.pooled_bam_input           = os.path.join(base_workdir_inputfiles, "pooled_bam.bam")
@@ -253,7 +254,7 @@ def overwrite_ensemblex_config(args, file_io_ctx, option_dict):
 
 def files_preparation(args, file_io_ctx):
     '''Prepares input files for ensemblex.'''
-    workdir_input_files_dir = os.path.join(os.getcwd(), args.working_dir, "input_files")
+    workdir_input_files_dir = os.path.join(os.getcwd(), file_io_ctx.working_dir, "input_files")
 
     # --gene_expression
     gene_expression_file      = args.gene_expression
@@ -313,12 +314,12 @@ def sort_vcf_files(args, file_io_ctx):
 
     if args.pooled_samples:
         print_log("Performing files preparation for demultiplexing (sorting vcf files)...")
-        launch_sort_pooled_cmd    = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", f"{args.working_dir}", "--step", "sort", "--vcf", file_io_ctx.pooled_samples_input, "--bam", file_io_ctx.pooled_bam_input, "--sortout", "pooled_samples_sorted.vcf"]
+        launch_sort_pooled_cmd    = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", f"{file_io_ctx.working_dir}", "--step", "sort", "--vcf", file_io_ctx.pooled_samples_input, "--bam", file_io_ctx.pooled_bam_input, "--sortout", "pooled_samples_sorted.vcf"]
         run_command(launch_sort_pooled_cmd, False)
         print_log(f"Moving sorted pooled samples vcf to {file_io_ctx.pooled_samples_input}...")
         os.rename("pooled_samples_sorted.vcf", file_io_ctx.pooled_samples_input)
 
-    launch_sort_reference_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", f"{args.working_dir}", "--step", "sort", "--vcf", file_io_ctx.genotype_reference_input, "--bam", file_io_ctx.pooled_bam_input, "--sortout", "reference_sorted.vcf"]
+    launch_sort_reference_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", f"{file_io_ctx.working_dir}", "--step", "sort", "--vcf", file_io_ctx.genotype_reference_input, "--bam", file_io_ctx.pooled_bam_input, "--sortout", "reference_sorted.vcf"]
     run_command(launch_sort_reference_cmd, False)
     os.rename("reference_sorted.vcf", file_io_ctx.genotype_reference_input)
 
@@ -338,11 +339,11 @@ def main():
 
     if args.step == "setup":
         if args.method == "GT":
-            launch_ensemblex_init_withGT_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", args.working_dir, "--step", "init-GT"]
+            launch_ensemblex_init_withGT_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", file_io_ctx.working_dir, "--step", "init-GT"]
             run_command(launch_ensemblex_init_withGT_cmd, False)
             option_dict = create_option_dict(args, file_io_ctx.config_ensemblex_ini)
         elif args.method == "noGT":
-            launch_ensemblex_init_withoutGT_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", args.working_dir, "--step", "init-noGT"]
+            launch_ensemblex_init_withoutGT_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", file_io_ctx.working_dir, "--step", "init-noGT"]
             run_command(launch_ensemblex_init_withoutGT_cmd, False)
             option_dict = create_option_dict(args, file_io_ctx.config_ensemblex_ini)
 
@@ -351,23 +352,23 @@ def main():
         files_preparation(args, file_io_ctx)
         sort_vcf_files(args, file_io_ctx)
     else:
-        if args.working_dir is None:
+        if file_io_ctx.working_dir is None:
             print_log("Error: --working_dir must be specified for steps other than 'setup'.")
             exit(1)
         else:
-            job_info_dir = os.path.join(args.working_dir, "job_info")
+            job_info_dir = os.path.join(file_io_ctx.working_dir, "job_info")
 
             option_dict = create_option_dict(args, file_io_ctx.config_ensemblex_ini)
             job_info_backup_dir = job_info_dir + "_backup_" + time.strftime("%Y%m%d-%H%M%S")
             if os.path.exists(job_info_dir):
                 shutil.copytree(job_info_dir, job_info_backup_dir)
             overwrite_ensemblex_config(args, file_io_ctx, option_dict)
-            launch_ensemblex_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", args.working_dir, "--step", args.step]
+            launch_ensemblex_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", file_io_ctx.working_dir, "--step", args.step]
             run_command(launch_ensemblex_cmd, False)
 
     # After running ensemblex, copy the output files to the output directory specified by the user
     try:
-        shutil.copytree(args.working_dir, args.output_dir)
+        shutil.copytree(file_io_ctx.working_dir, args.output_dir)
         print_log(f"Output directory {args.output_dir} created successfully.")
     except FileExistsError:
         print_log(f"Error: Output directory {args.output_dir} already exists.")
