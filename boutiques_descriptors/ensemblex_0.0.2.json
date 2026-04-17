@@ -1061,8 +1061,51 @@
             "PAR_freebayes": "\\A[ 0-9a-zA-Z\\.,=-]*\\z"
         },
         "cbrain:integrator_modules": {
-            "BoutiquesInputCopier": {
-                "working_dir": { "checkbox_hidden": true }
+            "BoutiquesResourceManager": {
+                "step": {
+                    "demuxalot":
+                    {
+                        "cpu-cores":         6,
+                        "ram":               15,
+                        "walltime-estimate": "02:00:00"
+                    },
+                    "demuxlet":
+                    {
+                        "cpu-cores":         1,
+                        "ram":               150,
+                        "walltime-estimate": "04:00:00"
+                    },
+                    "freemuxlet":
+                    {
+                        "cpu-cores":         1,
+                        "ram":               150,
+                        "walltime-estimate": "10:00:00"
+                    },
+                    "vireo":
+                    {
+                        "cpu-cores":         6,
+                        "ram":               40,
+                        "walltime-estimate": "2-4:00:00"
+                    },
+                    "souporcell":
+                    {
+                        "cpu-cores":         1,
+                        "ram":               30,
+                        "walltime-estimate": "3-00:00:00"
+                    },
+                    "ensemblex": {
+                        "cpu-cores":         1,
+                        "ram":               10,
+                        "walltime-estimate": "03:00:00"
+                    }
+                },
+                "PAR_demuxlet_field": {
+                    "GT": {
+                        "cpu-cores":         20,
+                        "ram":               80,
+                        "walltime-estimate": "02:00:00"
+                    }
+                }
             },
             "BoutiquesInputCacheCleaner": [
                 "gene_expression",
@@ -1076,7 +1119,7 @@
                 "output_dir"
             ],
             "BoutiquesPostProcessingCleaner": [
-                "working_dir"
+                "[WORKING_DIR]"
             ],
             "BoutiquesFileTypeVerifier": {
                 "working_dir": ["EnsemblexOutput"]
