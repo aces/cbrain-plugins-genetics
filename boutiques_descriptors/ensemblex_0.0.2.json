@@ -1061,6 +1061,11 @@
             "PAR_freebayes": "\\A[ 0-9a-zA-Z\\.,=-]*\\z"
         },
         "cbrain:integrator_modules": {
+            "BoutiquesInputCopier": {
+                "working_dir": {
+                    "checkbox_hidden": true
+                }
+            },
             "BoutiquesResourceManager": {
                 "step": {
                     "setup": {
@@ -1105,19 +1110,11 @@
                     }
                 }
             },
-            "BoutiquesInputCacheCleaner": [
-                "gene_expression",
-                "gene_expression_bai",
-                "barcodes",
-                "pooled_samples",
-                "genotype_reference",
-                "working_dir"
+            "BoutiquesPostProcessingCleaner": [
+                "ensemblex_<METHOD>_<STEP>_output"
             ],
             "BoutiquesOutputCacheCleaner": [
                 "output_dir"
-            ],
-            "BoutiquesPostProcessingCleaner": [
-                "[WORKING_DIR]"
             ],
             "BoutiquesFileTypeVerifier": {
                 "working_dir": ["EnsemblexOutput"]
