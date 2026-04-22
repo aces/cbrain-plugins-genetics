@@ -328,14 +328,12 @@ def main():
     tool_name       = "ensemblex"
     tool_version    = "v1"
     wrapper_version = "1.0.0"
-    wrapper_author  = "Natacha Beck \<nbeck@mcin.ca\>"
+    wrapper_author  = "Natacha Beck: nbeck@mcin.ca"
     print_header(tool_name, tool_version, wrapper_version, wrapper_author)
 
     args          = parse_args_list()
     file_io_ctx   = build_file_io_ctx(args)
     option_dict   = None
-
-
 
     if args.step == "setup":
         if args.method == "GT":
@@ -356,19 +354,15 @@ def main():
             print_log("Error: --working_dir must be specified for steps other than 'setup'.")
             exit(1)
         else:
-            job_info_dir = os.path.join(file_io_ctx.working_dir, "job_info")
-
             option_dict = create_option_dict(args, file_io_ctx.config_ensemblex_ini)
-            job_info_backup_dir = job_info_dir + "_backup_" + time.strftime("%Y%m%d-%H%M%S")
-            if os.path.exists(job_info_dir):
-                shutil.copytree(job_info_dir, job_info_backup_dir)
+
             overwrite_ensemblex_config(args, file_io_ctx, option_dict)
             launch_ensemblex_cmd = ["bash", os.path.expandvars("$ensemblex_HOME") + "/launch_ensemblex.sh", "-d", file_io_ctx.working_dir, "--step", args.step]
             run_command(launch_ensemblex_cmd, False)
 
-    # After running ensemblex, copy the output files to the output directory specified by the user
+    # After running ensemblex, move the output files to the output directory specified by the user
     try:
-        shutil.copytree(file_io_ctx.working_dir, args.output_dir)
+        os.rename(file_io_ctx.working_dir, args.output_dir)
         print_log(f"Output directory {args.output_dir} created successfully.")
     except FileExistsError:
         print_log(f"Error: Output directory {args.output_dir} already exists.")
