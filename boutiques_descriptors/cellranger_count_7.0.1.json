@@ -269,9 +269,9 @@
         "cbrain:author": "Natacha Beck <nbeck@mcin.ca>",
         "cbrain:readonly-input-files": true,
         "cbrain:integrator_modules": {
-            "BoutiquesCollectionBasenamesListMaker": [ "samples", "FASTQCollection", "\\A(.*)_S\\d+_L\\d+_[RI]\\d+_.+\\.fastq" ],
+            "BoutiquesCollectionBasenamesListMaker": [ "samples", "FastqCollection", "\\A(.*)_S\\d+_L\\d+_[RI]\\d+_.+\\.fastq" ],
             "BoutiquesFileTypeVerifier": {
-                "fastqs": [ "FASTQCollection" ]
+                "fastqs": [ "FastqCollection" ]
             },
             "BoutiquesOutputFileTypeSetter": {
                 "outdir": "CellrangerCountOutput"

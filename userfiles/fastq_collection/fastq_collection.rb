@@ -20,7 +20,7 @@
 #
 
 # Generic model FileCollection containing FASTQ files.
-class FASTQCollection < FileCollection
+class FastqCollection < FileCollection
 
   Revision_info=CbrainFileRevision[__FILE__] #:nodoc:
 

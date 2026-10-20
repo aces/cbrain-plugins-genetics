@@ -20,7 +20,7 @@
 #
 
 # Generic model for Tbl Sequin files.
-class SequinTbl < CSVFile
+class SequinTbl < CsvFile
 
   Revision_info=CbrainFileRevision[__FILE__] #:nodoc: 
 
